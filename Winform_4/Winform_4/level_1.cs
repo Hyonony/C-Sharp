@@ -27,10 +27,7 @@ namespace Winform_4
             DialogResult result = level2.ShowDialog();
             // Form2 보여주기
 
-            if (result == DialogResult.OK)
-            {
-                this.Show();
-            }
+            this.Show();
         }
 
         private void back_button_Click(object sender, EventArgs e)

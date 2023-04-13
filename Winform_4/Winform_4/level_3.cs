@@ -19,7 +19,18 @@ namespace Winform_4
 
         private void submit_button_Click(object sender, EventArgs e)
         {
+            Show_form SF = new Show_form();
 
+            // 현재 폼 숨기기
+            this.Hide();
+
+            DialogResult result = SF.ShowDialog();
+            // Form2 보여주기
+
+            if (result == DialogResult.OK)
+            {
+                this.Show();
+            }
         }
 
         private void back_button_Click(object sender, EventArgs e)
