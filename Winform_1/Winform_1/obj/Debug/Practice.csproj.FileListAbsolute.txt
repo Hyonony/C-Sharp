@@ -16,3 +16,6 @@ C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin
 C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\First App.pdb
 C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\First App.exe
 C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\First App.pdb
+D:\WorkSpace\toyProject\Winform_1\Practice\bin\Debug\First App.exe.config
+D:\WorkSpace\toyProject\Winform_1\Practice\obj\Debug\First App.exe
+D:\WorkSpace\toyProject\Winform_1\Practice\obj\Debug\First App.pdb
