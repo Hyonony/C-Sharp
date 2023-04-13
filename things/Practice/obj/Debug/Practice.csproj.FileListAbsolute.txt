@@ -1,0 +1,18 @@
+c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\Practice.MainMenu.resources
+c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\Practice.Properties.Resources.resources
+c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\Practice.csproj.GenerateResource.Cache
+c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\Practice.csprojResolveAssemblyReference.cache
+c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\Practice.Client.resources
+c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\Practice.Server.resources
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\Practice.Crawling.resources
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\WebDriver.dll
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\WebDriver.Support.dll
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\First App.exe.config
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\First App.exe
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\bin\Debug\First App.pdb
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\First App.exe
+C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Practice\Practice\obj\Debug\First App.pdb
