@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace Winform_4
 {
@@ -27,7 +28,7 @@ namespace Winform_4
 
         private void right_button_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void left_button_Click(object sender, EventArgs e)

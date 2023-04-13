@@ -35,5 +35,18 @@ namespace Winform_4
                 this.Show();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UploadFile uplodefile = new UploadFile();
+
+           
+            DialogResult result = uplodefile.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.Show();
+            }
+        }
     }
 }

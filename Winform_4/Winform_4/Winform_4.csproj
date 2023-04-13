@@ -118,6 +118,12 @@
     <Compile Include="Show_form.Designer.cs">
       <DependentUpon>Show_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="UploadFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadFile.Designer.cs">
+      <DependentUpon>UploadFile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="level_1.resx">
       <DependentUpon>level_1.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="Show_form.resx">
       <DependentUpon>Show_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UploadFile.resx">
+      <DependentUpon>UploadFile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -43,6 +43,7 @@
             this.ch_check = new System.Windows.Forms.RadioButton();
             this.K_check = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.upload_button = new System.Windows.Forms.Button();
             this.Menu_box.SuspendLayout();
             this.Food_box.SuspendLayout();
             this.check_menu.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             // Menu_box
             // 
+            this.Menu_box.Controls.Add(this.upload_button);
             this.Menu_box.Controls.Add(this.submit_button);
             this.Menu_box.Controls.Add(this.Food_box);
             this.Menu_box.Controls.Add(this.check_menu);
@@ -209,6 +211,16 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "어떤 분류를 추천 받고 싶으신가요?";
             // 
+            // upload_button
+            // 
+            this.upload_button.Location = new System.Drawing.Point(279, 602);
+            this.upload_button.Name = "upload_button";
+            this.upload_button.Size = new System.Drawing.Size(159, 33);
+            this.upload_button.TabIndex = 9;
+            this.upload_button.Text = "음식 추가하기";
+            this.upload_button.UseVisualStyleBackColor = true;
+            this.upload_button.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Mainfrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -243,6 +255,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button submit_button;
+        private System.Windows.Forms.Button upload_button;
     }
 }
 
