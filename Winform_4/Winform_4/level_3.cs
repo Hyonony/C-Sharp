@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Winform_4
 {
-    public partial class Mainfrom : Form
+    public partial class level_3 : Form
     {
-        public Mainfrom()
+        public level_3()
         {
             InitializeComponent();
+        }
+
+        private void submit_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back_button_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

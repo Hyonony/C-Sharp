@@ -27,3 +27,6 @@ c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_3\Winform_3\b
 c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_3\Winform_3\bin\Debug\System.Buffers.xml
 c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_3\Winform_3\bin\Debug\System.Memory.xml
 c:\users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_3\Winform_3\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\WorkSpace\toyProject\Winform_3\Winform_3\bin\Debug\Winform_3.exe.config
+D:\WorkSpace\toyProject\Winform_3\Winform_3\obj\Debug\Winform_3.exe
+D:\WorkSpace\toyProject\Winform_3\Winform_3\obj\Debug\Winform_3.pdb
