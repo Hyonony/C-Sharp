@@ -28,3 +28,6 @@ C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_2\Winform_2\b
 C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_2\Winform_2\bin\Debug\System.Buffers.xml
 C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_2\Winform_2\bin\Debug\System.Memory.xml
 C:\Users\hyeoneon.oh\documents\visual studio 2015\Projects\Winform_2\Winform_2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\WorkSpace\WinForm_1\regist\Winform_2\bin\Debug\Winform_2.exe.config
+D:\WorkSpace\WinForm_1\regist\Winform_2\obj\Debug\Winform_2.exe
+D:\WorkSpace\WinForm_1\regist\Winform_2\obj\Debug\Winform_2.pdb
