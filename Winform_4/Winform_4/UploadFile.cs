@@ -38,7 +38,7 @@ namespace Winform_4
                     MySqlCommand cmd = new MySqlCommand();
 
                     // 쿼리문 작성
-                    string query = "INSERT INTO food (food_name, foodImage, Food_type) VALUES (@name, @image, @type)";
+                    string query = "INSERT INTO food (food_name, foodImage, Food_type, spicy, salty, sweet) VALUES (@name, @image, @type, @spicy, @salty, @sweet)";
 
                     // MySqlCommand 객체에 쿼리문과 MySqlConnection 객체 할당
                     cmd.Connection = conn;
@@ -52,6 +52,8 @@ namespace Winform_4
 
                     // 나머지 파라미터 설정
                     cmd.Parameters.AddWithValue("@name", Food_name.Text);
+
+                    // 지리별
                     if (korea_radio.Checked)
                     {
                         cmd.Parameters.AddWithValue("@type", korea_radio.Text);
@@ -72,6 +74,72 @@ namespace Winform_4
                     {
                         cmd.Parameters.AddWithValue("@type", other_radio.Text);
                     }
+                    // 매움
+                    if (spicy_1.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@spicy", spicy_1.Text);
+                    }
+                    else if (spicy_2.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@spicy", spicy_2.Text);
+                    }
+                    else if (spicy_3.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@spicy", spicy_3.Text);
+                    }
+                    else if (spicy_4.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@spicy", spicy_4.Text);
+                    }
+                    else if (spicy_5.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@spicy", spicy_5.Text);
+                    }
+                    
+                    //달달
+                    if (sweet_1.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@sweet", sweet_1.Text);
+                    }
+                    else if (sweet_2.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@sweet", sweet_2.Text);
+                    }
+                    else if (sweet_3.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@sweet", sweet_3.Text);
+                    }
+                    else if (sweet_4.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@sweet", sweet_4.Text);
+                    }
+                    else if (sweet_5.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@sweet", sweet_5.Text);
+                    }
+                    
+                    //짠
+                    if (salty_1.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@salty", salty_1.Text);
+                    }
+                    else if (salty_2.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@salty", salty_2.Text);
+                    }
+                    else if (salty_3.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@salty", salty_3.Text);
+                    }
+                    else if (salty_4.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@salty", salty_4.Text);
+                    }
+                    else if (salty_5.Checked)
+                    {
+                        cmd.Parameters.AddWithValue("@salty", salty_5.Text);
+                    }
+
                     // 데이터베이스에 연결하고 명령 실행
                     conn.Open();
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -84,6 +152,11 @@ namespace Winform_4
             {
                 MessageBox.Show("업로드 중 오류가 발생했습니다. 오류 메시지: " + ex.Message);
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
