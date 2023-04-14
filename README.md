@@ -6,7 +6,7 @@
 
 * 잡다한 리스트 삽입 삭제
 * TCP/IP 통신
-* Selenium을 이용한 crawling(미완성)
+* Selenium을 이용한 crawling
 
 ---
 
