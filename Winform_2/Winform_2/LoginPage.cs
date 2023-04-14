@@ -32,14 +32,15 @@ namespace Winform_2
 
         private void Login_Button(object sender, EventArgs e) //LoginButton
         {
+            Chat chat = new Chat();
             string connString = "server=localhost;user=root;password=root;database=DB_user;";
 
             // MySQL 연결 객체 생성
             MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
             try
             {
-                // MySQL 연결
-                conn.Open();
 
                 // 로그인 쿼리문 생성
                 string query = "SELECT * FROM users WHERE id = @id AND pw = @pw";
@@ -61,12 +62,34 @@ namespace Winform_2
                 // 로그인 결과 확인
                 if (reader.HasRows)
                 {
-                    MessageBox.Show("로그인 되었습니다.");
+                    int id_ = 0;
+
+                    while (reader.Read())
+                    {
+                        id_ = Convert.ToInt32(reader["ID"]);
+                    }
+                    if (id_ == 1)
+                    {
+                        MessageBox.Show("관리자 페이지로 이동합니다.");
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("로그인 되었습니다.");
+                        this.Hide();
+                        DialogResult result = chat.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            this.Show();
+                        }
+                    }
                 }
                 else
                 {
                     MessageBox.Show("로그인에 실패하였습니다.");
                 }
+
+                
 
                 // 데이터베이스 리소스 해제
                 reader.Close();
