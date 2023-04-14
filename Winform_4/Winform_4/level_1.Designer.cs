@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.Menu_box = new System.Windows.Forms.GroupBox();
+            this.back_button = new System.Windows.Forms.Button();
             this.submit_button = new System.Windows.Forms.Button();
             this.Food_box = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.hot_5 = new System.Windows.Forms.Label();
             this.hot_4 = new System.Windows.Forms.Label();
             this.hot_3 = new System.Windows.Forms.Label();
             this.hot_2 = new System.Windows.Forms.Label();
             this.hot_1 = new System.Windows.Forms.Label();
             this.check_menu = new System.Windows.Forms.GroupBox();
-            this.other_check = new System.Windows.Forms.RadioButton();
-            this.jp_check = new System.Windows.Forms.RadioButton();
-            this.west_check = new System.Windows.Forms.RadioButton();
-            this.ch_check = new System.Windows.Forms.RadioButton();
-            this.K_check = new System.Windows.Forms.RadioButton();
+            this.hot_5_check = new System.Windows.Forms.RadioButton();
+            this.hot_4_check = new System.Windows.Forms.RadioButton();
+            this.hot_3_check = new System.Windows.Forms.RadioButton();
+            this.hot_2_check = new System.Windows.Forms.RadioButton();
+            this.hot_1_check = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.back_button = new System.Windows.Forms.Button();
             this.Menu_box.SuspendLayout();
             this.Food_box.SuspendLayout();
             this.check_menu.SuspendLayout();
@@ -64,6 +64,16 @@
             this.Menu_box.TabStop = false;
             this.Menu_box.Text = "Choise !";
             // 
+            // back_button
+            // 
+            this.back_button.Location = new System.Drawing.Point(330, 593);
+            this.back_button.Name = "back_button";
+            this.back_button.Size = new System.Drawing.Size(102, 42);
+            this.back_button.TabIndex = 9;
+            this.back_button.Text = "처음으로";
+            this.back_button.UseVisualStyleBackColor = true;
+            this.back_button.Click += new System.EventHandler(this.back_button_Click);
+            // 
             // submit_button
             // 
             this.submit_button.Location = new System.Drawing.Point(113, 503);
@@ -76,7 +86,7 @@
             // 
             // Food_box
             // 
-            this.Food_box.Controls.Add(this.label5);
+            this.Food_box.Controls.Add(this.hot_5);
             this.Food_box.Controls.Add(this.hot_4);
             this.Food_box.Controls.Add(this.hot_3);
             this.Food_box.Controls.Add(this.hot_2);
@@ -87,15 +97,15 @@
             this.Food_box.TabIndex = 7;
             this.Food_box.TabStop = false;
             // 
-            // label5
+            // hot_5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 11F);
-            this.label5.Location = new System.Drawing.Point(22, 238);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 22);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "가장 안매움";
+            this.hot_5.AutoSize = true;
+            this.hot_5.Font = new System.Drawing.Font("굴림", 11F);
+            this.hot_5.Location = new System.Drawing.Point(22, 238);
+            this.hot_5.Name = "hot_5";
+            this.hot_5.Size = new System.Drawing.Size(127, 22);
+            this.hot_5.TabIndex = 9;
+            this.hot_5.Text = "가장 안매움";
             // 
             // hot_4
             // 
@@ -139,66 +149,66 @@
             // 
             // check_menu
             // 
-            this.check_menu.Controls.Add(this.other_check);
-            this.check_menu.Controls.Add(this.jp_check);
-            this.check_menu.Controls.Add(this.west_check);
-            this.check_menu.Controls.Add(this.ch_check);
-            this.check_menu.Controls.Add(this.K_check);
+            this.check_menu.Controls.Add(this.hot_5_check);
+            this.check_menu.Controls.Add(this.hot_4_check);
+            this.check_menu.Controls.Add(this.hot_3_check);
+            this.check_menu.Controls.Add(this.hot_2_check);
+            this.check_menu.Controls.Add(this.hot_1_check);
             this.check_menu.Location = new System.Drawing.Point(276, 172);
             this.check_menu.Name = "check_menu";
             this.check_menu.Size = new System.Drawing.Size(62, 288);
             this.check_menu.TabIndex = 6;
             this.check_menu.TabStop = false;
             // 
-            // other_check
+            // hot_5_check
             // 
-            this.other_check.AutoSize = true;
-            this.other_check.Location = new System.Drawing.Point(17, 239);
-            this.other_check.Name = "other_check";
-            this.other_check.Size = new System.Drawing.Size(21, 20);
-            this.other_check.TabIndex = 4;
-            this.other_check.TabStop = true;
-            this.other_check.UseVisualStyleBackColor = true;
+            this.hot_5_check.AutoSize = true;
+            this.hot_5_check.Location = new System.Drawing.Point(17, 239);
+            this.hot_5_check.Name = "hot_5_check";
+            this.hot_5_check.Size = new System.Drawing.Size(21, 20);
+            this.hot_5_check.TabIndex = 4;
+            this.hot_5_check.TabStop = true;
+            this.hot_5_check.UseVisualStyleBackColor = true;
             // 
-            // jp_check
+            // hot_4_check
             // 
-            this.jp_check.AutoSize = true;
-            this.jp_check.Location = new System.Drawing.Point(17, 185);
-            this.jp_check.Name = "jp_check";
-            this.jp_check.Size = new System.Drawing.Size(21, 20);
-            this.jp_check.TabIndex = 3;
-            this.jp_check.TabStop = true;
-            this.jp_check.UseVisualStyleBackColor = true;
+            this.hot_4_check.AutoSize = true;
+            this.hot_4_check.Location = new System.Drawing.Point(17, 185);
+            this.hot_4_check.Name = "hot_4_check";
+            this.hot_4_check.Size = new System.Drawing.Size(21, 20);
+            this.hot_4_check.TabIndex = 3;
+            this.hot_4_check.TabStop = true;
+            this.hot_4_check.UseVisualStyleBackColor = true;
             // 
-            // west_check
+            // hot_3_check
             // 
-            this.west_check.AutoSize = true;
-            this.west_check.Location = new System.Drawing.Point(17, 133);
-            this.west_check.Name = "west_check";
-            this.west_check.Size = new System.Drawing.Size(21, 20);
-            this.west_check.TabIndex = 2;
-            this.west_check.TabStop = true;
-            this.west_check.UseVisualStyleBackColor = true;
+            this.hot_3_check.AutoSize = true;
+            this.hot_3_check.Location = new System.Drawing.Point(17, 133);
+            this.hot_3_check.Name = "hot_3_check";
+            this.hot_3_check.Size = new System.Drawing.Size(21, 20);
+            this.hot_3_check.TabIndex = 2;
+            this.hot_3_check.TabStop = true;
+            this.hot_3_check.UseVisualStyleBackColor = true;
             // 
-            // ch_check
+            // hot_2_check
             // 
-            this.ch_check.AutoSize = true;
-            this.ch_check.Location = new System.Drawing.Point(17, 79);
-            this.ch_check.Name = "ch_check";
-            this.ch_check.Size = new System.Drawing.Size(21, 20);
-            this.ch_check.TabIndex = 1;
-            this.ch_check.TabStop = true;
-            this.ch_check.UseVisualStyleBackColor = true;
+            this.hot_2_check.AutoSize = true;
+            this.hot_2_check.Location = new System.Drawing.Point(17, 79);
+            this.hot_2_check.Name = "hot_2_check";
+            this.hot_2_check.Size = new System.Drawing.Size(21, 20);
+            this.hot_2_check.TabIndex = 1;
+            this.hot_2_check.TabStop = true;
+            this.hot_2_check.UseVisualStyleBackColor = true;
             // 
-            // K_check
+            // hot_1_check
             // 
-            this.K_check.AutoSize = true;
-            this.K_check.Location = new System.Drawing.Point(17, 26);
-            this.K_check.Name = "K_check";
-            this.K_check.Size = new System.Drawing.Size(21, 20);
-            this.K_check.TabIndex = 0;
-            this.K_check.TabStop = true;
-            this.K_check.UseVisualStyleBackColor = true;
+            this.hot_1_check.AutoSize = true;
+            this.hot_1_check.Location = new System.Drawing.Point(17, 26);
+            this.hot_1_check.Name = "hot_1_check";
+            this.hot_1_check.Size = new System.Drawing.Size(21, 20);
+            this.hot_1_check.TabIndex = 0;
+            this.hot_1_check.TabStop = true;
+            this.hot_1_check.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -209,16 +219,6 @@
             this.label6.Size = new System.Drawing.Size(186, 26);
             this.label6.TabIndex = 5;
             this.label6.Text = "맵기 정도 선택";
-            // 
-            // back_button
-            // 
-            this.back_button.Location = new System.Drawing.Point(330, 593);
-            this.back_button.Name = "back_button";
-            this.back_button.Size = new System.Drawing.Size(102, 42);
-            this.back_button.TabIndex = 9;
-            this.back_button.Text = "처음으로";
-            this.back_button.UseVisualStyleBackColor = true;
-            this.back_button.Click += new System.EventHandler(this.back_button_Click);
             // 
             // level_1
             // 
@@ -243,17 +243,17 @@
         private System.Windows.Forms.GroupBox Menu_box;
         private System.Windows.Forms.Button submit_button;
         private System.Windows.Forms.GroupBox Food_box;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label hot_5;
         private System.Windows.Forms.Label hot_4;
         private System.Windows.Forms.Label hot_3;
         private System.Windows.Forms.Label hot_2;
         private System.Windows.Forms.Label hot_1;
         private System.Windows.Forms.GroupBox check_menu;
-        private System.Windows.Forms.RadioButton other_check;
-        private System.Windows.Forms.RadioButton jp_check;
-        private System.Windows.Forms.RadioButton west_check;
-        private System.Windows.Forms.RadioButton ch_check;
-        private System.Windows.Forms.RadioButton K_check;
+        private System.Windows.Forms.RadioButton hot_5_check;
+        private System.Windows.Forms.RadioButton hot_4_check;
+        private System.Windows.Forms.RadioButton hot_3_check;
+        private System.Windows.Forms.RadioButton hot_2_check;
+        private System.Windows.Forms.RadioButton hot_1_check;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button back_button;
     }

@@ -16,10 +16,37 @@ namespace Winform_4
         {
             InitializeComponent();
         }
+        public static string hotlevel;
 
-        private void submit_button_Click(object sender, EventArgs e)
+        public void submit_button_Click(object sender, EventArgs e)
         {
+            Show_form showform = new Show_form();
+
             level_2 level2 = new level_2();
+            
+            if (hot_1_check.Checked)
+            {
+                hotlevel = "1";
+            }
+            else if (hot_2_check.Checked)
+            {
+                hotlevel = "2";
+            }
+            else if (hot_3_check.Checked)
+            {
+                hotlevel = "3";
+            }
+            else if (hot_4_check.Checked)
+            {
+                hotlevel = "4";
+            }
+            else if (hot_5_check.Checked)
+            {
+                hotlevel = "5";
+            }
+
+
+
 
             // 현재 폼 숨기기
             this.Hide();

@@ -38,11 +38,11 @@
             this.solt_2 = new System.Windows.Forms.Label();
             this.solt_1 = new System.Windows.Forms.Label();
             this.check_menu = new System.Windows.Forms.GroupBox();
-            this.other_check = new System.Windows.Forms.RadioButton();
-            this.jp_check = new System.Windows.Forms.RadioButton();
-            this.west_check = new System.Windows.Forms.RadioButton();
-            this.ch_check = new System.Windows.Forms.RadioButton();
-            this.K_check = new System.Windows.Forms.RadioButton();
+            this.salt_5_check = new System.Windows.Forms.RadioButton();
+            this.salt_4_check = new System.Windows.Forms.RadioButton();
+            this.salt_3_check = new System.Windows.Forms.RadioButton();
+            this.salt_2_check = new System.Windows.Forms.RadioButton();
+            this.salt_1_check = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.Menu_box.SuspendLayout();
             this.Food_box.SuspendLayout();
@@ -149,66 +149,66 @@
             // 
             // check_menu
             // 
-            this.check_menu.Controls.Add(this.other_check);
-            this.check_menu.Controls.Add(this.jp_check);
-            this.check_menu.Controls.Add(this.west_check);
-            this.check_menu.Controls.Add(this.ch_check);
-            this.check_menu.Controls.Add(this.K_check);
+            this.check_menu.Controls.Add(this.salt_5_check);
+            this.check_menu.Controls.Add(this.salt_4_check);
+            this.check_menu.Controls.Add(this.salt_3_check);
+            this.check_menu.Controls.Add(this.salt_2_check);
+            this.check_menu.Controls.Add(this.salt_1_check);
             this.check_menu.Location = new System.Drawing.Point(276, 172);
             this.check_menu.Name = "check_menu";
             this.check_menu.Size = new System.Drawing.Size(62, 288);
             this.check_menu.TabIndex = 6;
             this.check_menu.TabStop = false;
             // 
-            // other_check
+            // salt_5_check
             // 
-            this.other_check.AutoSize = true;
-            this.other_check.Location = new System.Drawing.Point(17, 239);
-            this.other_check.Name = "other_check";
-            this.other_check.Size = new System.Drawing.Size(21, 20);
-            this.other_check.TabIndex = 4;
-            this.other_check.TabStop = true;
-            this.other_check.UseVisualStyleBackColor = true;
+            this.salt_5_check.AutoSize = true;
+            this.salt_5_check.Location = new System.Drawing.Point(17, 239);
+            this.salt_5_check.Name = "salt_5_check";
+            this.salt_5_check.Size = new System.Drawing.Size(21, 20);
+            this.salt_5_check.TabIndex = 4;
+            this.salt_5_check.TabStop = true;
+            this.salt_5_check.UseVisualStyleBackColor = true;
             // 
-            // jp_check
+            // salt_4_check
             // 
-            this.jp_check.AutoSize = true;
-            this.jp_check.Location = new System.Drawing.Point(17, 185);
-            this.jp_check.Name = "jp_check";
-            this.jp_check.Size = new System.Drawing.Size(21, 20);
-            this.jp_check.TabIndex = 3;
-            this.jp_check.TabStop = true;
-            this.jp_check.UseVisualStyleBackColor = true;
+            this.salt_4_check.AutoSize = true;
+            this.salt_4_check.Location = new System.Drawing.Point(17, 185);
+            this.salt_4_check.Name = "salt_4_check";
+            this.salt_4_check.Size = new System.Drawing.Size(21, 20);
+            this.salt_4_check.TabIndex = 3;
+            this.salt_4_check.TabStop = true;
+            this.salt_4_check.UseVisualStyleBackColor = true;
             // 
-            // west_check
+            // salt_3_check
             // 
-            this.west_check.AutoSize = true;
-            this.west_check.Location = new System.Drawing.Point(17, 133);
-            this.west_check.Name = "west_check";
-            this.west_check.Size = new System.Drawing.Size(21, 20);
-            this.west_check.TabIndex = 2;
-            this.west_check.TabStop = true;
-            this.west_check.UseVisualStyleBackColor = true;
+            this.salt_3_check.AutoSize = true;
+            this.salt_3_check.Location = new System.Drawing.Point(17, 133);
+            this.salt_3_check.Name = "salt_3_check";
+            this.salt_3_check.Size = new System.Drawing.Size(21, 20);
+            this.salt_3_check.TabIndex = 2;
+            this.salt_3_check.TabStop = true;
+            this.salt_3_check.UseVisualStyleBackColor = true;
             // 
-            // ch_check
+            // salt_2_check
             // 
-            this.ch_check.AutoSize = true;
-            this.ch_check.Location = new System.Drawing.Point(17, 79);
-            this.ch_check.Name = "ch_check";
-            this.ch_check.Size = new System.Drawing.Size(21, 20);
-            this.ch_check.TabIndex = 1;
-            this.ch_check.TabStop = true;
-            this.ch_check.UseVisualStyleBackColor = true;
+            this.salt_2_check.AutoSize = true;
+            this.salt_2_check.Location = new System.Drawing.Point(17, 79);
+            this.salt_2_check.Name = "salt_2_check";
+            this.salt_2_check.Size = new System.Drawing.Size(21, 20);
+            this.salt_2_check.TabIndex = 1;
+            this.salt_2_check.TabStop = true;
+            this.salt_2_check.UseVisualStyleBackColor = true;
             // 
-            // K_check
+            // salt_1_check
             // 
-            this.K_check.AutoSize = true;
-            this.K_check.Location = new System.Drawing.Point(17, 26);
-            this.K_check.Name = "K_check";
-            this.K_check.Size = new System.Drawing.Size(21, 20);
-            this.K_check.TabIndex = 0;
-            this.K_check.TabStop = true;
-            this.K_check.UseVisualStyleBackColor = true;
+            this.salt_1_check.AutoSize = true;
+            this.salt_1_check.Location = new System.Drawing.Point(17, 26);
+            this.salt_1_check.Name = "salt_1_check";
+            this.salt_1_check.Size = new System.Drawing.Size(21, 20);
+            this.salt_1_check.TabIndex = 0;
+            this.salt_1_check.TabStop = true;
+            this.salt_1_check.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -250,11 +250,11 @@
         private System.Windows.Forms.Label solt_2;
         private System.Windows.Forms.Label solt_1;
         private System.Windows.Forms.GroupBox check_menu;
-        private System.Windows.Forms.RadioButton other_check;
-        private System.Windows.Forms.RadioButton jp_check;
-        private System.Windows.Forms.RadioButton west_check;
-        private System.Windows.Forms.RadioButton ch_check;
-        private System.Windows.Forms.RadioButton K_check;
+        private System.Windows.Forms.RadioButton salt_5_check;
+        private System.Windows.Forms.RadioButton salt_4_check;
+        private System.Windows.Forms.RadioButton salt_3_check;
+        private System.Windows.Forms.RadioButton salt_2_check;
+        private System.Windows.Forms.RadioButton salt_1_check;
         private System.Windows.Forms.Label label6;
     }
 }
