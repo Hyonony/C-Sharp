@@ -1,6 +1,6 @@
-﻿namespace Winform_5
+﻿namespace WinForm5
 {
-    partial class MainForm
+    partial class Form1
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,33 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(32, 31);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(637, 645);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // MainForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 700);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "MainForm";
-            this.Text = "첫 페이지";
-            this.ResumeLayout(false);
-
+            this.Text = "Form1";
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
