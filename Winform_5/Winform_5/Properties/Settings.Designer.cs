@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinForm5.Properties
+namespace Winform_5.Properties
 {
 
 

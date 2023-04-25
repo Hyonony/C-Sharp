@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinForm5
+namespace Winform_5
 {
     static class Program
     {
