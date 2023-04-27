@@ -43,6 +43,8 @@
 ---
 
 ### Winform_5
-* Game
-  * MainForm
-    * (구현중)
+* BaseBall Game
+  * 숫자 3자리 입력
+  * 난수 3자리 생성
+  * Enter Key 입력
+  * ...
