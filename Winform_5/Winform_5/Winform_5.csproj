@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseballGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseballGame.Designer.cs">
+      <DependentUpon>BaseballGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mainform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaseballGame.resx">
+      <DependentUpon>BaseballGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
     </EmbeddedResource>
