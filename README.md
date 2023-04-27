@@ -43,8 +43,7 @@
 ---
 
 ### Winform_5
-* BaseBall Game
-  * 숫자 3자리 입력
-  * 난수 3자리 생성
-  * Enter Key 입력
-  * ...
+* Mini games
+  * BaseBall Game
+   * 난수 3자리 생성, 3자리 숫자 맞추기
+  * (준비중)
