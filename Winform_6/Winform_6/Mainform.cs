@@ -39,21 +39,24 @@ namespace Winform_6
         {
             button_Start.Enabled = false;
 
-            int count = Convert.ToInt32(6);
-
-            for (int i = 0; i < count; i++)
+            while(true)
             {
                 // 현재 마우스 좌표를 가져옵니다.
                 Point currentPosition = Cursor.Position;
-
+             
                 // 마우스 클릭 이벤트를 발생시킵니다.
                 mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)currentPosition.X, (uint)currentPosition.Y, 0, 0);
 
                 // 클릭 간격 시간만큼 대기합니다.
-                int interval = Convert.ToInt32(1000);
+                int interval = Convert.ToInt32(1);
                 await Task.Delay(interval);
+                
+                if(button_Start.Enabled == true)
+                {
+                    break;
+                }
+                
             }
-            button_Start.Enabled = true;
         }
 
         private void button_End_Click(object sender, EventArgs e)
@@ -67,6 +70,13 @@ namespace Winform_6
             {
                 // 실시간 마우스 좌표 저장
                 button_Save.PerformClick();
+
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                // 실시간 마우스 좌표 저장
+                button_Start.Enabled = true;
+                
             }
         }
     }
