@@ -16,5 +16,20 @@ namespace Winform_6
         {
             InitializeComponent();
         }
+
+        private void button_Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Start_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_End_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
