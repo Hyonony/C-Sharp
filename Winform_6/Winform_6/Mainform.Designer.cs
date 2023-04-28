@@ -94,7 +94,7 @@
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(101, 61);
             this.button_Save.TabIndex = 4;
-            this.button_Save.Text = "좌표 잡기!";
+            this.button_Save.Text = "F12(좌표)";
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             this.button_Save.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auto_Mouse_keyDown);

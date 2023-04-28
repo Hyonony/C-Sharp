@@ -27,12 +27,7 @@ namespace Winform_6
 
         private void button_Save_Click(object sender, EventArgs e)
         {
-            Point mousePosition = Cursor.Position;
-            int x = mousePosition.X;
-            int y = mousePosition.Y;
-            // 저장한 좌표를 사용해 원하는 작업을 수행하면 됩니다.
-            textBox1.Text = x.ToString();
-            textBox2.Text = y.ToString();
+          
         }
 
         private async void button_Start_Click(object sender, EventArgs e)
@@ -61,22 +56,24 @@ namespace Winform_6
 
         private void button_End_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Auto_Mouse_keyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F12)
             {
-                // 실시간 마우스 좌표 저장
-                button_Save.PerformClick();
+                Point currentPosition = Cursor.Position;
 
+                int x = currentPosition.X;
+                int y = currentPosition.Y;
+
+                textBox1.Text = x.ToString();
+                textBox2.Text = y.ToString();
             }
             if (e.KeyCode == Keys.Escape)
             {
-                // 실시간 마우스 좌표 저장
                 button_Start.Enabled = true;
-                
+
             }
         }
     }
