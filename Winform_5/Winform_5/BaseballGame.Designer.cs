@@ -63,6 +63,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(263, 28);
             this.textBox1.TabIndex = 2;
+            this.textBox1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.textBox1_PreviewKeyDown);
             // 
             // label1
             // 
@@ -84,13 +85,13 @@
             this.Throw_Button.UseVisualStyleBackColor = true;
             this.Throw_Button.Click += new System.EventHandler(this.Throw_Button_Click);
             // 
-            // BaseballGame
+            // BaseBallGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 700);
             this.Controls.Add(this.groupBox1);
-            this.Name = "BaseballGame";
+            this.Name = "BaseBallGame";
             this.Text = "BaseballGame";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
