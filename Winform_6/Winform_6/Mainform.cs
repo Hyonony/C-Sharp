@@ -16,7 +16,6 @@ namespace Winform_6
         public Mainform()
         {
             InitializeComponent();
-            button_Save.PerformClick();
         }
 
         private void button_Save_Click(object sender, EventArgs e)
