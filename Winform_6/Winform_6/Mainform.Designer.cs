@@ -36,6 +36,7 @@
             this.button_Save = new System.Windows.Forms.Button();
             this.button_Start = new System.Windows.Forms.Button();
             this.button_End = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +74,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button_End);
             this.groupBox1.Controls.Add(this.button_Start);
             this.groupBox1.Controls.Add(this.button_Save);
@@ -95,6 +97,7 @@
             this.button_Save.Text = "F12 (저장)";
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
+            this.button_Save.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auto_Mouse_keyDown);
             // 
             // button_Start
             // 
@@ -115,6 +118,16 @@
             this.button_End.Text = "중지";
             this.button_End.UseVisualStyleBackColor = true;
             this.button_End.Click += new System.EventHandler(this.button_End_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 13F);
+            this.label3.Location = new System.Drawing.Point(81, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(250, 26);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Auto Mouse Clicker";
             // 
             // Mainform
             // 
@@ -140,6 +153,7 @@
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_End;
         private System.Windows.Forms.Button button_Start;
+        private System.Windows.Forms.Label label3;
     }
 }
 
