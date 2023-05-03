@@ -51,5 +51,6 @@
 
 ### Winform_6
 * Auto Mouse Clicker
+  * 연달아 클릭, 마우스 좌표 값 수정
   
   
