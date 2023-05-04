@@ -46,8 +46,10 @@ namespace Winform_6
                 int interval = Convert.ToInt32(1);
                 await Task.Delay(interval);
                 
+                // Escape 수정 필요
                 if(button_Start.Enabled == true)
                 {
+                    MessageBox.Show("True!");
                     break;
                 }
                 
@@ -73,7 +75,6 @@ namespace Winform_6
             if (e.KeyCode == Keys.Escape)
             {
                 button_Start.Enabled = true;
-
             }
         }
     }
