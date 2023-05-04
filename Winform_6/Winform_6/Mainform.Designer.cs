@@ -33,10 +33,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_Save = new System.Windows.Forms.Button();
-            this.button_Start = new System.Windows.Forms.Button();
-            this.button_End = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button_End = new System.Windows.Forms.Button();
+            this.button_Start = new System.Windows.Forms.Button();
+            this.button_Save = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,26 +88,15 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // button_Save
+            // label3
             // 
-            this.button_Save.Location = new System.Drawing.Point(252, 75);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(101, 61);
-            this.button_Save.TabIndex = 4;
-            this.button_Save.Text = "F12(좌표)";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
-            this.button_Save.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auto_Mouse_keyDown);
-            // 
-            // button_Start
-            // 
-            this.button_Start.Location = new System.Drawing.Point(85, 156);
-            this.button_Start.Name = "button_Start";
-            this.button_Start.Size = new System.Drawing.Size(101, 50);
-            this.button_Start.TabIndex = 5;
-            this.button_Start.Text = "클릭";
-            this.button_Start.UseVisualStyleBackColor = true;
-            this.button_Start.Click += new System.EventHandler(this.button_Start_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 13F);
+            this.label3.Location = new System.Drawing.Point(81, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(250, 26);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Auto Mouse Clicker";
             // 
             // button_End
             // 
@@ -119,15 +108,27 @@
             this.button_End.UseVisualStyleBackColor = true;
             this.button_End.Click += new System.EventHandler(this.button_End_Click);
             // 
-            // label3
+            // button_Start
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 13F);
-            this.label3.Location = new System.Drawing.Point(81, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(250, 26);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Auto Mouse Clicker";
+            this.button_Start.Location = new System.Drawing.Point(85, 156);
+            this.button_Start.Name = "button_Start";
+            this.button_Start.Size = new System.Drawing.Size(101, 50);
+            this.button_Start.TabIndex = 5;
+            this.button_Start.Text = "클릭";
+            this.button_Start.UseVisualStyleBackColor = true;
+            this.button_Start.Click += new System.EventHandler(this.button_Start_Click);
+            this.button_Start.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auto_Mouse_keyDown);
+            // 
+            // button_Save
+            // 
+            this.button_Save.Location = new System.Drawing.Point(252, 75);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(101, 61);
+            this.button_Save.TabIndex = 4;
+            this.button_Save.Text = "F12(좌표)";
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
+            this.button_Save.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auto_Mouse_keyDown);
             // 
             // Mainform
             // 

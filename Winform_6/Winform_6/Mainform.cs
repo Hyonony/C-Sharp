@@ -49,7 +49,6 @@ namespace Winform_6
                 // Escape 수정 필요
                 if(button_Start.Enabled == true)
                 {
-                    MessageBox.Show("True!");
                     break;
                 }
                 
