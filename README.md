@@ -57,4 +57,4 @@
 
 ### Winform_7
 * Searching Program
-  * serch dir
+  * search dir
