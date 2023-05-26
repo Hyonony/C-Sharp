@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.directoryTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.resultListBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // directoryTextBox
-            // 
-            this.directoryTextBox.Location = new System.Drawing.Point(34, 42);
-            this.directoryTextBox.Name = "directoryTextBox";
-            this.directoryTextBox.Size = new System.Drawing.Size(604, 28);
-            this.directoryTextBox.TabIndex = 0;
-            this.directoryTextBox.Text = "Input Want to Search Directory";
-            // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(644, 42);
+            this.searchButton.Location = new System.Drawing.Point(34, 48);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(88, 35);
             this.searchButton.TabIndex = 2;
@@ -57,7 +48,6 @@
             // 
             this.groupBox1.Controls.Add(this.resultListBox);
             this.groupBox1.Controls.Add(this.searchButton);
-            this.groupBox1.Controls.Add(this.directoryTextBox);
             this.groupBox1.Location = new System.Drawing.Point(23, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(765, 743);
@@ -83,14 +73,11 @@
             this.Name = "MainForm";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox directoryTextBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox resultListBox;

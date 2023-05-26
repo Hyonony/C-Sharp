@@ -13,25 +13,26 @@ namespace AutoSearchDirectory
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string directoryPath = directoryTextBox.Text.Trim();
-
-            if (Directory.Exists(directoryPath))
+            using (var folderBrowserDialog = new FolderBrowserDialog())
             {
-                string[] files = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories);
-                resultListBox.Items.Clear();
+                DialogResult result = folderBrowserDialog.ShowDialog();
 
-                if (files.Length > 0)
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
                 {
-                    resultListBox.Items.AddRange(files);
+                    string directoryPath = folderBrowserDialog.SelectedPath;
+
+                    string[] files = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories);
+                    resultListBox.Items.Clear();
+
+                    if (files.Length > 0)
+                    {
+                        resultListBox.Items.AddRange(files);
+                    }
+                    else
+                    {
+                        resultListBox.Items.Add("No files found.");
+                    }
                 }
-                else
-                {
-                    resultListBox.Items.Add("No files found.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Invalid directory path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
