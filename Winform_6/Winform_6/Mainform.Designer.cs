@@ -116,8 +116,6 @@
             this.button_Start.TabIndex = 5;
             this.button_Start.Text = "클릭";
             this.button_Start.UseVisualStyleBackColor = true;
-            this.button_Start.Click += new System.EventHandler(this.button_Start_Click);
-            this.button_Start.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auto_Mouse_keyDown);
             // 
             // button_Save
             // 

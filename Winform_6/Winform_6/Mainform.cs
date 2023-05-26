@@ -46,7 +46,7 @@ namespace Winform_6
                 int interval = Convert.ToInt32(1);
                 await Task.Delay(interval);
                 
-                // Escape 수정 필요
+
                 if(button_Start.Enabled == true)
                 {
                     break;
@@ -57,6 +57,8 @@ namespace Winform_6
 
         private void button_End_Click(object sender, EventArgs e)
         {
+            button_Start.Enabled = false;
+
         }
 
         private void Auto_Mouse_keyDown(object sender, KeyEventArgs e)
