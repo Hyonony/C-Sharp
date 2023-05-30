@@ -34,6 +34,7 @@
             this.Seach_Word = new System.Windows.Forms.TextBox();
             this.DIR_BUTTON = new System.Windows.Forms.Button();
             this.resultListBox = new System.Windows.Forms.ListBox();
+            this.SavefileButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.SavefileButton);
             this.groupBox1.Controls.Add(this.FileOpenButton);
             this.groupBox1.Controls.Add(this.Seach_Word);
             this.groupBox1.Controls.Add(this.DIR_BUTTON);
@@ -98,6 +100,16 @@
             this.resultListBox.Size = new System.Drawing.Size(698, 580);
             this.resultListBox.TabIndex = 3;
             // 
+            // SavefileButton
+            // 
+            this.SavefileButton.Location = new System.Drawing.Point(410, 681);
+            this.SavefileButton.Name = "SavefileButton";
+            this.SavefileButton.Size = new System.Drawing.Size(103, 35);
+            this.SavefileButton.TabIndex = 7;
+            this.SavefileButton.Text = "파일 저장";
+            this.SavefileButton.UseVisualStyleBackColor = true;
+            this.SavefileButton.Click += new System.EventHandler(this.SavefileButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -119,6 +131,7 @@
         private System.Windows.Forms.Button DIR_BUTTON;
         private System.Windows.Forms.TextBox Seach_Word;
         private System.Windows.Forms.Button FileOpenButton;
+        private System.Windows.Forms.Button SavefileButton;
     }
 }
 

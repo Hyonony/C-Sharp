@@ -79,5 +79,29 @@ namespace AutoSearchDirectory
                 }
             }
         }
+
+        private void SavefileButton_Click(object sender, EventArgs e)
+        {
+            if (resultListBox.SelectedItem != null)
+            {
+                string selectedFilePath = resultListBox.SelectedItem.ToString();
+
+                if (File.Exists(selectedFilePath))
+                {
+                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Text files (*.cpp)|*.cpp";
+                        saveFileDialog.FileName = Path.GetFileName(selectedFilePath);
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string destinationFilePath = saveFileDialog.FileName;
+                            File.WriteAllText(destinationFilePath, File.ReadAllText(selectedFilePath));
+                            MessageBox.Show("File saved successfully!");
+                        }
+                    }
+                }
+            }
+        }
     }
 }
