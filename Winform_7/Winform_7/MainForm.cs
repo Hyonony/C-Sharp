@@ -2,6 +2,7 @@
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace AutoSearchDirectory
 {
@@ -23,18 +24,21 @@ namespace AutoSearchDirectory
                     string directoryPath = folderBrowserDialog.SelectedPath;
                     string searchWord = Seach_Word.Text;
 
-                    string[] files = Directory.GetFiles(directoryPath, "*.cpp", SearchOption.AllDirectories);
+                    string[] files = Directory.GetFiles(directoryPath, "*.txt", SearchOption.AllDirectories);
                     resultListBox.Items.Clear();
 
                     if (files.Length > 0)
                     {
                         foreach (string filePath in files)
                         {
-                            string fileContents = File.ReadAllText(filePath);
-                            // Perform your desired content validation logic here
-                            if (fileContents.Contains(searchWord))
+                            string[] lines = File.ReadAllLines(filePath);
+                            for (int i = 0; i < lines.Length; i++)
                             {
-                                resultListBox.Items.Add(filePath);
+                                string line = lines[i];
+                                if (line.Contains(searchWord))
+                                {
+                                    resultListBox.Items.Add($"{filePath} (Line {i + 1}): {line}");
+                                }
                             }
                         }
                     }
@@ -43,8 +47,6 @@ namespace AutoSearchDirectory
                         resultListBox.Items.Add("No files found.");
                     }
                 }
-
-                
             }
         }
 
@@ -52,7 +54,7 @@ namespace AutoSearchDirectory
         {
             if (resultListBox.SelectedItem != null)
             {
-                string selectedFilePath = resultListBox.SelectedItem.ToString();
+                string selectedFilePath = resultListBox.SelectedItem.ToString().Split(':')[0];
                 string selectedFolderPath = Path.GetDirectoryName(selectedFilePath);
 
                 if (Directory.Exists(selectedFolderPath))
@@ -71,7 +73,7 @@ namespace AutoSearchDirectory
         {
             if (resultListBox.SelectedItem != null)
             {
-                string selectedFilePath = resultListBox.SelectedItem.ToString();
+                string selectedFilePath = resultListBox.SelectedItem.ToString().Split(':')[0];
 
                 if (File.Exists(selectedFilePath))
                 {
@@ -82,25 +84,38 @@ namespace AutoSearchDirectory
 
         private void SavefileButton_Click(object sender, EventArgs e)
         {
-            if (resultListBox.SelectedItem != null)
+            if (resultListBox.Items.Count > 0)
             {
-                string selectedFilePath = resultListBox.SelectedItem.ToString();
-
-                if (File.Exists(selectedFilePath))
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-                    {
-                        saveFileDialog.Filter = "Text files (*.cpp)|*.cpp";
-                        saveFileDialog.FileName = Path.GetFileName(selectedFilePath);
+                    saveFileDialog.Filter = "Text files (*.txt)|*.txt";
+                    saveFileDialog.FileName = "ListContents.txt";
 
-                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string destinationFilePath = saveFileDialog.FileName;
+
+                        using (StreamWriter writer = new StreamWriter(destinationFilePath))
                         {
-                            string destinationFilePath = saveFileDialog.FileName;
-                            File.WriteAllText(destinationFilePath, File.ReadAllText(selectedFilePath));
-                            MessageBox.Show("File saved successfully!");
+                            foreach (var item in resultListBox.Items)
+                            {
+                                string line = item.ToString();
+                                int lastColonIndex = line.LastIndexOf(':');
+                                if (lastColonIndex != -1)
+                                {
+                                    string value = line.Substring(lastColonIndex + 1).Trim();
+                                    writer.WriteLine(value);
+                                }
+                            }
                         }
+
+                        MessageBox.Show("List contents saved successfully!");
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("No items in the list to save.");
             }
         }
     }
