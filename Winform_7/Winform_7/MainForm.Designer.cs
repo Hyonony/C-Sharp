@@ -31,6 +31,7 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.resultListBox = new System.Windows.Forms.ListBox();
+            this.DIR_BUTTON = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.DIR_BUTTON);
             this.groupBox1.Controls.Add(this.resultListBox);
             this.groupBox1.Controls.Add(this.searchButton);
             this.groupBox1.Location = new System.Drawing.Point(23, 26);
@@ -61,8 +63,18 @@
             this.resultListBox.ItemHeight = 18;
             this.resultListBox.Location = new System.Drawing.Point(34, 99);
             this.resultListBox.Name = "resultListBox";
-            this.resultListBox.Size = new System.Drawing.Size(698, 616);
+            this.resultListBox.Size = new System.Drawing.Size(698, 580);
             this.resultListBox.TabIndex = 3;
+            // 
+            // DIR_BUTTON
+            // 
+            this.DIR_BUTTON.Location = new System.Drawing.Point(629, 691);
+            this.DIR_BUTTON.Name = "DIR_BUTTON";
+            this.DIR_BUTTON.Size = new System.Drawing.Size(103, 35);
+            this.DIR_BUTTON.TabIndex = 4;
+            this.DIR_BUTTON.Text = "폴더 경로";
+            this.DIR_BUTTON.UseVisualStyleBackColor = true;
+            this.DIR_BUTTON.Click += new System.EventHandler(this.DIR_BUTTON_Click);
             // 
             // MainForm
             // 
@@ -81,6 +93,7 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox resultListBox;
+        private System.Windows.Forms.Button DIR_BUTTON;
     }
 }
 

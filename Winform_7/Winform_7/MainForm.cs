@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace AutoSearchDirectory
@@ -32,6 +33,22 @@ namespace AutoSearchDirectory
                     {
                         resultListBox.Items.Add("No files found.");
                     }
+                }
+
+                
+            }
+        }
+
+        private void DIR_BUTTON_Click(object sender, EventArgs e) //DIR_BUTTON
+        {
+            if (resultListBox.SelectedItem != null)
+            {
+                string selectedFilePath = resultListBox.SelectedItem.ToString();
+                string selectedFolderPath = Path.GetDirectoryName(selectedFilePath);
+
+                if (Directory.Exists(selectedFolderPath))
+                {
+                    Process.Start("explorer.exe", selectedFolderPath);
                 }
             }
         }
