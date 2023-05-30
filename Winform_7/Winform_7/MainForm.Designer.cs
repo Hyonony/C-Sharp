@@ -79,7 +79,7 @@
             this.Seach_Word.Name = "Seach_Word";
             this.Seach_Word.Size = new System.Drawing.Size(604, 28);
             this.Seach_Word.TabIndex = 5;
-            this.Seach_Word.TextChanged += new System.EventHandler(this.Seach_Word_TextChanged);
+            this.Seach_Word.TextChanged += new System.EventHandler(this.searchWordTextBox_TextChanged);
             // 
             // DIR_BUTTON
             // 

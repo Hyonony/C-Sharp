@@ -2,7 +2,6 @@
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
-using System.Linq;
 
 namespace AutoSearchDirectory
 {
@@ -37,7 +36,7 @@ namespace AutoSearchDirectory
                                 string line = lines[i];
                                 if (line.Contains(searchWord))
                                 {
-                                    resultListBox.Items.Add($"{filePath} (Line {i + 1}): {line}");
+                                    resultListBox.Items.Add($"{filePath}:{line}");
                                 }
                             }
                         }
@@ -50,34 +49,43 @@ namespace AutoSearchDirectory
             }
         }
 
-        private void DIR_BUTTON_Click(object sender, EventArgs e) //DIR_BUTTON
+        private void DIR_BUTTON_Click(object sender, EventArgs e)
         {
             if (resultListBox.SelectedItem != null)
             {
-                string selectedFilePath = resultListBox.SelectedItem.ToString().Split(':')[0];
-                string selectedFolderPath = Path.GetDirectoryName(selectedFilePath);
-
-                if (Directory.Exists(selectedFolderPath))
+                string selectedLine = resultListBox.SelectedItem.ToString();
+                int lastColonIndex = selectedLine.LastIndexOf(':');
+                if (lastColonIndex != -1)
                 {
-                    Process.Start("explorer.exe", selectedFolderPath);
+                    string selectedValue = selectedLine.Substring(0, lastColonIndex);
+                    string selectedFolderPath = Path.GetDirectoryName(selectedValue);
+
+                    if (Directory.Exists(selectedFolderPath))
+                    {
+                        Process.Start("explorer.exe", selectedFolderPath);
+                    }
                 }
             }
         }
 
-        private void Seach_Word_TextChanged(object sender, EventArgs e) //Seach_Word
+        private void searchWordTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            // This event handler is empty, no changes needed here.
         }
 
         private void FileOpenButton_Click(object sender, EventArgs e)
         {
             if (resultListBox.SelectedItem != null)
             {
-                string selectedFilePath = resultListBox.SelectedItem.ToString().Split(':')[0];
-
-                if (File.Exists(selectedFilePath))
+                string selectedLine = resultListBox.SelectedItem.ToString();
+                int lastColonIndex = selectedLine.LastIndexOf(':');
+                if (lastColonIndex != -1)
                 {
-                    Process.Start(selectedFilePath);
+                    string selectedValue = selectedLine.Substring(0, lastColonIndex);
+                    if (File.Exists(selectedValue))
+                    {
+                        Process.Start(selectedValue);
+                    }
                 }
             }
         }
@@ -103,7 +111,7 @@ namespace AutoSearchDirectory
                                 int lastColonIndex = line.LastIndexOf(':');
                                 if (lastColonIndex != -1)
                                 {
-                                    string value = line.Substring(lastColonIndex + 1).Trim();
+                                    string value = line.Substring(0, lastColonIndex);
                                     writer.WriteLine(value);
                                 }
                             }
