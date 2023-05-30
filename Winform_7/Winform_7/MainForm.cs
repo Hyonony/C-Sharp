@@ -2,6 +2,7 @@
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace AutoSearchDirectory
 {
@@ -12,7 +13,7 @@ namespace AutoSearchDirectory
             InitializeComponent();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private async void searchButton_Click(object sender, EventArgs e)
         {
             using (var folderBrowserDialog = new FolderBrowserDialog())
             {
@@ -30,7 +31,7 @@ namespace AutoSearchDirectory
                     {
                         foreach (string filePath in files)
                         {
-                            string[] lines = File.ReadAllLines(filePath);
+                            string[] lines = await ReadAllLinesAsync(filePath);
                             for (int i = 0; i < lines.Length; i++)
                             {
                                 string line = lines[i];
@@ -41,12 +42,22 @@ namespace AutoSearchDirectory
                             }
                         }
                     }
-                    
+
                     else
                     {
                         resultListBox.Items.Add("No files found.");
                     }
                 }
+            }
+        }
+
+        private async Task<string[]> ReadAllLinesAsync(string filePath)
+        {
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string contents = await reader.ReadToEndAsync();
+                string[] lines = contents.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                return lines;
             }
         }
 
@@ -90,8 +101,7 @@ namespace AutoSearchDirectory
                 }
             }
         }
-
-        private void SavefileButton_Click(object sender, EventArgs e)
+        private async void SavefileButton_Click(object sender, EventArgs e)
         {
             if (resultListBox.Items.Count > 0)
             {
@@ -117,7 +127,7 @@ namespace AutoSearchDirectory
                                     string value = line.Substring(lastIndex + 1).TrimStart();
                                     if (!resultListBox.Items.Contains(value))
                                     {
-                                        writer.WriteLine(value);
+                                        await writer.WriteLineAsync(value);
                                     }
                                 }
                             }
