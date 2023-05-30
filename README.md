@@ -60,3 +60,4 @@
   * search CPP File Words
   * File 위치 경로 불러내기
   * File 불러오기
+  * File 값만 저장
