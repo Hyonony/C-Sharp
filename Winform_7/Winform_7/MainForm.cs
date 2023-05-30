@@ -21,13 +21,22 @@ namespace AutoSearchDirectory
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
                 {
                     string directoryPath = folderBrowserDialog.SelectedPath;
+                    string searchWord = Seach_Word.Text;
 
-                    string[] files = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories);
+                    string[] files = Directory.GetFiles(directoryPath, "*.cpp", SearchOption.AllDirectories);
                     resultListBox.Items.Clear();
 
                     if (files.Length > 0)
                     {
-                        resultListBox.Items.AddRange(files);
+                        foreach (string filePath in files)
+                        {
+                            string fileContents = File.ReadAllText(filePath);
+                            // Perform your desired content validation logic here
+                            if (fileContents.Contains(searchWord))
+                            {
+                                resultListBox.Items.Add(filePath);
+                            }
+                        }
                     }
                     else
                     {
@@ -49,6 +58,24 @@ namespace AutoSearchDirectory
                 if (Directory.Exists(selectedFolderPath))
                 {
                     Process.Start("explorer.exe", selectedFolderPath);
+                }
+            }
+        }
+
+        private void Seach_Word_TextChanged(object sender, EventArgs e) //Seach_Word
+        {
+
+        }
+
+        private void FileOpenButton_Click(object sender, EventArgs e)
+        {
+            if (resultListBox.SelectedItem != null)
+            {
+                string selectedFilePath = resultListBox.SelectedItem.ToString();
+
+                if (File.Exists(selectedFilePath))
+                {
+                    Process.Start(selectedFilePath);
                 }
             }
         }

@@ -30,14 +30,16 @@
         {
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.resultListBox = new System.Windows.Forms.ListBox();
+            this.FileOpenButton = new System.Windows.Forms.Button();
+            this.Seach_Word = new System.Windows.Forms.TextBox();
             this.DIR_BUTTON = new System.Windows.Forms.Button();
+            this.resultListBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(34, 48);
+            this.searchButton.Location = new System.Drawing.Point(644, 48);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(88, 35);
             this.searchButton.TabIndex = 2;
@@ -47,6 +49,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.FileOpenButton);
+            this.groupBox1.Controls.Add(this.Seach_Word);
             this.groupBox1.Controls.Add(this.DIR_BUTTON);
             this.groupBox1.Controls.Add(this.resultListBox);
             this.groupBox1.Controls.Add(this.searchButton);
@@ -57,24 +61,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "What do you Want to Search";
             // 
-            // resultListBox
+            // FileOpenButton
             // 
-            this.resultListBox.FormattingEnabled = true;
-            this.resultListBox.ItemHeight = 18;
-            this.resultListBox.Location = new System.Drawing.Point(34, 99);
-            this.resultListBox.Name = "resultListBox";
-            this.resultListBox.Size = new System.Drawing.Size(698, 580);
-            this.resultListBox.TabIndex = 3;
+            this.FileOpenButton.Location = new System.Drawing.Point(520, 681);
+            this.FileOpenButton.Name = "FileOpenButton";
+            this.FileOpenButton.Size = new System.Drawing.Size(103, 35);
+            this.FileOpenButton.TabIndex = 6;
+            this.FileOpenButton.Text = "파일 열기";
+            this.FileOpenButton.UseVisualStyleBackColor = true;
+            this.FileOpenButton.Click += new System.EventHandler(this.FileOpenButton_Click);
+            // 
+            // Seach_Word
+            // 
+            this.Seach_Word.Location = new System.Drawing.Point(34, 51);
+            this.Seach_Word.Name = "Seach_Word";
+            this.Seach_Word.Size = new System.Drawing.Size(604, 28);
+            this.Seach_Word.TabIndex = 5;
+            this.Seach_Word.TextChanged += new System.EventHandler(this.Seach_Word_TextChanged);
             // 
             // DIR_BUTTON
             // 
-            this.DIR_BUTTON.Location = new System.Drawing.Point(629, 691);
+            this.DIR_BUTTON.Location = new System.Drawing.Point(629, 681);
             this.DIR_BUTTON.Name = "DIR_BUTTON";
             this.DIR_BUTTON.Size = new System.Drawing.Size(103, 35);
             this.DIR_BUTTON.TabIndex = 4;
             this.DIR_BUTTON.Text = "폴더 경로";
             this.DIR_BUTTON.UseVisualStyleBackColor = true;
             this.DIR_BUTTON.Click += new System.EventHandler(this.DIR_BUTTON_Click);
+            // 
+            // resultListBox
+            // 
+            this.resultListBox.FormattingEnabled = true;
+            this.resultListBox.ItemHeight = 18;
+            this.resultListBox.Location = new System.Drawing.Point(34, 89);
+            this.resultListBox.Name = "resultListBox";
+            this.resultListBox.Size = new System.Drawing.Size(698, 580);
+            this.resultListBox.TabIndex = 3;
             // 
             // MainForm
             // 
@@ -83,8 +105,9 @@
             this.ClientSize = new System.Drawing.Size(800, 800);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "파일 탐색 프로그램";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -94,6 +117,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox resultListBox;
         private System.Windows.Forms.Button DIR_BUTTON;
+        private System.Windows.Forms.TextBox Seach_Word;
+        private System.Windows.Forms.Button FileOpenButton;
     }
 }
 
