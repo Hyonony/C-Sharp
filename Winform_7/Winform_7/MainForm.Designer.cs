@@ -30,11 +30,11 @@
         {
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SavefileButton = new System.Windows.Forms.Button();
             this.FileOpenButton = new System.Windows.Forms.Button();
             this.Seach_Word = new System.Windows.Forms.TextBox();
             this.DIR_BUTTON = new System.Windows.Forms.Button();
             this.resultListBox = new System.Windows.Forms.ListBox();
-            this.SavefileButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "What do you Want to Search";
+            // 
+            // SavefileButton
+            // 
+            this.SavefileButton.Location = new System.Drawing.Point(410, 681);
+            this.SavefileButton.Name = "SavefileButton";
+            this.SavefileButton.Size = new System.Drawing.Size(103, 35);
+            this.SavefileButton.TabIndex = 7;
+            this.SavefileButton.Text = "파일 저장";
+            this.SavefileButton.UseVisualStyleBackColor = true;
+            this.SavefileButton.Click += new System.EventHandler(this.SavefileButton_Click);
             // 
             // FileOpenButton
             // 
@@ -94,21 +104,12 @@
             // resultListBox
             // 
             this.resultListBox.FormattingEnabled = true;
+            this.resultListBox.HorizontalScrollbar = true;
             this.resultListBox.ItemHeight = 18;
             this.resultListBox.Location = new System.Drawing.Point(34, 89);
             this.resultListBox.Name = "resultListBox";
             this.resultListBox.Size = new System.Drawing.Size(698, 580);
             this.resultListBox.TabIndex = 3;
-            // 
-            // SavefileButton
-            // 
-            this.SavefileButton.Location = new System.Drawing.Point(410, 681);
-            this.SavefileButton.Name = "SavefileButton";
-            this.SavefileButton.Size = new System.Drawing.Size(103, 35);
-            this.SavefileButton.TabIndex = 7;
-            this.SavefileButton.Text = "파일 저장";
-            this.SavefileButton.UseVisualStyleBackColor = true;
-            this.SavefileButton.Click += new System.EventHandler(this.SavefileButton_Click);
             // 
             // MainForm
             // 

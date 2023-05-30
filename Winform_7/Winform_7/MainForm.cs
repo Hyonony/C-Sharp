@@ -41,6 +41,7 @@ namespace AutoSearchDirectory
                             }
                         }
                     }
+                    
                     else
                     {
                         resultListBox.Items.Add("No files found.");
@@ -109,10 +110,15 @@ namespace AutoSearchDirectory
                             {
                                 string line = item.ToString();
                                 int lastColonIndex = line.LastIndexOf(':');
-                                if (lastColonIndex != -1)
+                                int lastBackslashIndex = line.LastIndexOf('\\');
+                                int lastIndex = Math.Max(lastColonIndex, lastBackslashIndex);
+                                if (lastIndex != -1 && lastIndex < line.Length - 1)
                                 {
-                                    string value = line.Substring(0, lastColonIndex);
-                                    writer.WriteLine(value);
+                                    string value = line.Substring(lastIndex + 1).TrimStart();
+                                    if (!resultListBox.Items.Contains(value))
+                                    {
+                                        writer.WriteLine(value);
+                                    }
                                 }
                             }
                         }
