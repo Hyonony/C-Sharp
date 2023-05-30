@@ -1,4 +1,4 @@
-﻿namespace AutoSearchDirectory
+﻿namespace MainForm
 {
     partial class MainForm
     {
@@ -35,6 +35,7 @@
             this.Seach_Word = new System.Windows.Forms.TextBox();
             this.DIR_BUTTON = new System.Windows.Forms.Button();
             this.resultListBox = new System.Windows.Forms.ListBox();
+            this.downloadButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.downloadButton);
             this.groupBox1.Controls.Add(this.SavefileButton);
             this.groupBox1.Controls.Add(this.FileOpenButton);
             this.groupBox1.Controls.Add(this.Seach_Word);
@@ -111,6 +113,16 @@
             this.resultListBox.Size = new System.Drawing.Size(698, 580);
             this.resultListBox.TabIndex = 3;
             // 
+            // downloadButton
+            // 
+            this.downloadButton.Location = new System.Drawing.Point(34, 681);
+            this.downloadButton.Name = "downloadButton";
+            this.downloadButton.Size = new System.Drawing.Size(103, 35);
+            this.downloadButton.TabIndex = 8;
+            this.downloadButton.Text = "다운로드";
+            this.downloadButton.UseVisualStyleBackColor = true;
+            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -133,6 +145,7 @@
         private System.Windows.Forms.TextBox Seach_Word;
         private System.Windows.Forms.Button FileOpenButton;
         private System.Windows.Forms.Button SavefileButton;
+        private System.Windows.Forms.Button downloadButton;
     }
 }
 

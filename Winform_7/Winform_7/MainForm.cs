@@ -3,8 +3,9 @@ using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using Winform_7;
 
-namespace AutoSearchDirectory
+namespace MainForm
 {
     public partial class MainForm : Form
     {
@@ -141,6 +142,11 @@ namespace AutoSearchDirectory
             {
                 MessageBox.Show("No items in the list to save.");
             }
+        }
+        private void downloadButton_Click(object sender, EventArgs e)
+        {
+            Download download = new Download();
+            download.Show();
         }
     }
 }
