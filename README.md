@@ -57,5 +57,6 @@
 
 ### Winform_7
 * Searching Program
-  * search dir
-  * 파일 위치 Dir 불러내기
+  * search CPP File Words
+  * File 위치 경로 불러내기
+  * File 불러오기
