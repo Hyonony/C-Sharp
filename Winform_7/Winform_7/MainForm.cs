@@ -4,11 +4,14 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using Winform_7;
+using System.Net;
+using System.ComponentModel;
 
 namespace MainForm
 {
     public partial class MainForm : Form
     {
+
         public MainForm()
         {
             InitializeComponent();
@@ -18,6 +21,7 @@ namespace MainForm
         {
             using (var folderBrowserDialog = new FolderBrowserDialog())
             {
+                
                 DialogResult result = folderBrowserDialog.ShowDialog();
 
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowserDialog.SelectedPath))
@@ -51,6 +55,7 @@ namespace MainForm
                 }
             }
         }
+        
 
         private async Task<string[]> ReadAllLinesAsync(string filePath)
         {
@@ -148,5 +153,6 @@ namespace MainForm
             Download download = new Download();
             download.Show();
         }
+        
     }
 }

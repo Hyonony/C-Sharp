@@ -30,12 +30,12 @@
         {
             this.searchButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.downloadButton = new System.Windows.Forms.Button();
             this.SavefileButton = new System.Windows.Forms.Button();
             this.FileOpenButton = new System.Windows.Forms.Button();
             this.Seach_Word = new System.Windows.Forms.TextBox();
             this.DIR_BUTTON = new System.Windows.Forms.Button();
             this.resultListBox = new System.Windows.Forms.ListBox();
-            this.downloadButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "What do you Want to Search";
+            // 
+            // downloadButton
+            // 
+            this.downloadButton.Location = new System.Drawing.Point(34, 681);
+            this.downloadButton.Name = "downloadButton";
+            this.downloadButton.Size = new System.Drawing.Size(103, 35);
+            this.downloadButton.TabIndex = 8;
+            this.downloadButton.Text = "다운로드";
+            this.downloadButton.UseVisualStyleBackColor = true;
+            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // SavefileButton
             // 
@@ -112,16 +122,6 @@
             this.resultListBox.Name = "resultListBox";
             this.resultListBox.Size = new System.Drawing.Size(698, 580);
             this.resultListBox.TabIndex = 3;
-            // 
-            // downloadButton
-            // 
-            this.downloadButton.Location = new System.Drawing.Point(34, 681);
-            this.downloadButton.Name = "downloadButton";
-            this.downloadButton.Size = new System.Drawing.Size(103, 35);
-            this.downloadButton.TabIndex = 8;
-            this.downloadButton.Text = "다운로드";
-            this.downloadButton.UseVisualStyleBackColor = true;
-            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // MainForm
             // 

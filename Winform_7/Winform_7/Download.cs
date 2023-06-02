@@ -18,7 +18,7 @@ namespace Winform_7
         private void downloadButton_Click(object sender, EventArgs e)
         {
             string fileUrl = "URL_OF_YOUR_FILE";
-            string destinationPath = "DESTINATION_PATH";
+            string destinationPath = @"C:\Users\hyeoneon.oh\Desktop";
 
             webClient = new WebClient();
             webClient.DownloadProgressChanged += WebClient_DownloadProgressChanged;
@@ -59,7 +59,6 @@ namespace Winform_7
             webClient.DownloadFileCompleted -= WebClient_DownloadFileCompleted;
             webClient.Dispose();
             webClient = null;
-            
         }
         
     }
