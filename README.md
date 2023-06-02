@@ -57,7 +57,7 @@
 
 ### Winform_7
 * Searching Program
-  * search CPP File Words
+  * search CPP File Words (txt로 수정)
   * File 위치 경로 불러내기
   * File 불러오기
   * File 값만 저장
