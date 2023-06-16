@@ -16,7 +16,7 @@ namespace ThreadWinFormExample
         {
             for (int i = 1; i <= 10; i++)
             {
-                int result = i * i;
+                int result = i + i;
 
                 // Invoke를 사용하여 ListBox의 쓰레드가 안전한 방식으로소를 추가하도록 처리합니다.
                 Invoke((MethodInvoker)delegate {
