@@ -1,4 +1,4 @@
-﻿namespace Winform_8
+﻿namespace ThreadWinFormExample
 {
     partial class MainForm
     {
@@ -28,20 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ResultListBox = new System.Windows.Forms.ListBox();
+            this.StartThreadButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // ResultListBox
+            // 
+            this.ResultListBox.FormattingEnabled = true;
+            this.ResultListBox.ItemHeight = 18;
+            this.ResultListBox.Location = new System.Drawing.Point(74, 144);
+            this.ResultListBox.Name = "ResultListBox";
+            this.ResultListBox.Size = new System.Drawing.Size(616, 274);
+            this.ResultListBox.TabIndex = 0;
+            this.ResultListBox.SelectedIndexChanged += new System.EventHandler(this.ResultListBox_SelectedIndexChanged);
+            // 
+            // StartThreadButton
+            // 
+            this.StartThreadButton.Location = new System.Drawing.Point(74, 97);
+            this.StartThreadButton.Name = "StartThreadButton";
+            this.StartThreadButton.Size = new System.Drawing.Size(90, 30);
+            this.StartThreadButton.TabIndex = 1;
+            this.StartThreadButton.Text = "button1";
+            this.StartThreadButton.UseVisualStyleBackColor = true;
+            this.StartThreadButton.Click += new System.EventHandler(this.StartThreadButton_Click_1);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 500);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.StartThreadButton);
+            this.Controls.Add(this.ResultListBox);
+            this.Name = "MainForm";
+            this.Text = "메인 화면";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox ResultListBox;
+        private System.Windows.Forms.Button StartThreadButton;
     }
 }
 
