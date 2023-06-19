@@ -30,6 +30,7 @@
         {
             this.ResultListBox = new System.Windows.Forms.ListBox();
             this.StartThreadButton = new System.Windows.Forms.Button();
+            this.StopThreadButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ResultListBox
@@ -48,15 +49,26 @@
             this.StartThreadButton.Name = "StartThreadButton";
             this.StartThreadButton.Size = new System.Drawing.Size(90, 30);
             this.StartThreadButton.TabIndex = 1;
-            this.StartThreadButton.Text = "button1";
+            this.StartThreadButton.Text = "Start";
             this.StartThreadButton.UseVisualStyleBackColor = true;
             this.StartThreadButton.Click += new System.EventHandler(this.StartThreadButton_Click_1);
+            // 
+            // StopThreadButton
+            // 
+            this.StopThreadButton.Location = new System.Drawing.Point(600, 97);
+            this.StopThreadButton.Name = "StopThreadButton";
+            this.StopThreadButton.Size = new System.Drawing.Size(90, 30);
+            this.StopThreadButton.TabIndex = 2;
+            this.StopThreadButton.Text = "Stop";
+            this.StopThreadButton.UseVisualStyleBackColor = true;
+            this.StopThreadButton.Click += new System.EventHandler(this.StopThreadButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.StopThreadButton);
             this.Controls.Add(this.StartThreadButton);
             this.Controls.Add(this.ResultListBox);
             this.Name = "MainForm";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.ListBox ResultListBox;
         private System.Windows.Forms.Button StartThreadButton;
+        private System.Windows.Forms.Button StopThreadButton;
     }
 }
 
