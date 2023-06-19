@@ -18,13 +18,21 @@ namespace Winform_8
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            this.Load += GameForm_Load;
+
+            this.KeyPreview = true;
+        }
+
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+            this.KeyDown += GameForm_KeyDown;
         }
 
         private void ScoreLabel_Click(object sender, EventArgs e)
         {
 
         }
-        private void StartButton_Click(object sender, EventArgs e)
+        private async void StartButton_Click(object sender, EventArgs e)
         {
             if (cts != null)
             {
@@ -33,44 +41,40 @@ namespace Winform_8
             }
 
             cts = new CancellationTokenSource();
-            Task.Run(() => MoveTarget(cts.Token));
+            await MoveTarget(cts.Token);
         }
         private async Task MoveTarget(CancellationToken cancellationToken)
         {
             while (!cancellationToken.IsCancellationRequested)
             {
                 await Task.Delay(50);
-                Invoke(new Action(() =>
+                Target.Left += 5;
+                if (Target.Right > GamePanel.Width || Target.Left < 0)
                 {
-                    Target.Left += 5;
-                    if (Target.Right > GamePanel.Width || Target.Left < 0)
-                    {
-                        Target.Left -= 10;
-                    }
+                    Target.Left -= 10;
+                }
 
-                    // Check for a collision with the Ball
-                    if (Ball.Bounds.IntersectsWith(Target.Bounds))
-                    {
-                        score++;
-                        ScoreLabel.Text = "Score: " + score;
-                        Ball.Location = new Point(0, 0);
-                    }
-                }));
+                // Check for a collision with the Ball
+                if (Ball.Bounds.IntersectsWith(Target.Bounds))
+                {
+                    score++;
+                    ScoreLabel.Text = "Score: " + score;
+                    Ball.Location = new Point(0, 0);
+                }
             }
         }
-        private async void MainForm_KeyDown(object sender, KeyEventArgs e)
+        private async void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
             {
                 Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);
                 while (Ball.Top > 0)
                 {
-                    await Task.Delay(50); // pause for 50 milliseconds
-                    Invoke(new Action(() => { Ball.Top -= 10; })); // move the ball
+                    await Task.Delay(50);
+                    Ball.Top -= 10;
                 }
-                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height); // reset the ball
+                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);
             }
         }
-
     }
 }
