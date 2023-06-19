@@ -64,7 +64,7 @@ namespace ThreadWinFormExample
 
         private void MoveToGameButton_Click(object sender, EventArgs e)
         {
-            GameForm gameform = new GameForm(this);
+            GameForm gameform = new GameForm();
             gameform.FormClosed += GameForm_FormClosed;
 
             gameform.Show();

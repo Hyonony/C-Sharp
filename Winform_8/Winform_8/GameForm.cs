@@ -1,23 +1,19 @@
 ﻿using System;
 using System.Drawing;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ThreadWinFormExample;
 
 namespace Winform_8
 {
     public partial class GameForm : Form
     {
         private int score = 0;
-        private CancellationTokenSource cts;
+        private int direction = 1;
+        private bool isMoving = false;
 
-        private MainForm mainForm;
-
-        public GameForm(MainForm mainForm)
+        public GameForm()
         {
             InitializeComponent();
-            this.mainForm = mainForm;
             this.Load += GameForm_Load;
 
             this.KeyPreview = true;
@@ -32,47 +28,51 @@ namespace Winform_8
         {
 
         }
+
         private async void StartButton_Click(object sender, EventArgs e)
         {
-            if (cts != null)
+            isMoving = !isMoving;
+            if (isMoving)
             {
-                cts.Cancel();
-                cts.Dispose();
-            }
-
-            cts = new CancellationTokenSource();
-            await MoveTarget(cts.Token);
-        }
-        private async Task MoveTarget(CancellationToken cancellationToken)
-        {
-            while (!cancellationToken.IsCancellationRequested)
-            {
-                await Task.Delay(50);
-                Target.Left += 5;
-                if (Target.Right > GamePanel.Width || Target.Left < 0)
+                StartButton.Text = "정지";
+                while (isMoving)
                 {
-                    Target.Left -= 10;
-                }
+                    Target.Left += direction * 5;
+                    if (Target.Right > GamePanel.Width || Target.Left < 0)
+                    {
+                        direction *= -1;
+                    }
 
-                // Check for a collision with the Ball
-                if (Ball.Bounds.IntersectsWith(Target.Bounds))
-                {
-                    score++;
-                    ScoreLabel.Text = "Score: " + score;
-                    Ball.Location = new Point(0, 0);
+                    await Task.Delay(50);
                 }
             }
+            else
+            {
+                StartButton.Text = "시작";
+            }
         }
+
         private async void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space && isMoving)
             {
-                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);
+                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);el;
+    }
+
                 while (Ball.Top > 0)
                 {
                     await Task.Delay(50);
                     Ball.Top -= 10;
+
+                    // Check for a collision with the Target
+                    if (Ball.Bounds.IntersectsWith(Target.Bounds))
+                    {
+                        score++;
+                        ScoreLabel.Text = "Score: " + score;
+                        break;
+                    }
                 }
+
                 Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);
             }
         }

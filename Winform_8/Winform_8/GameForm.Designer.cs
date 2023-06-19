@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.StartButton = new System.Windows.Forms.Button();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.GamePanel = new System.Windows.Forms.Panel();
             this.Ball = new System.Windows.Forms.PictureBox();
             this.Target = new System.Windows.Forms.PictureBox();
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             this.GamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Target)).BeginInit();
@@ -105,10 +107,10 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel GamePanel;
+        private System.Windows.Forms.PictureBox Ball;
+        private System.Windows.Forms.PictureBox Target;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label ScoreLabel;
-        private System.Windows.Forms.Panel GamePanel;
-        private System.Windows.Forms.PictureBox Target;
-        private System.Windows.Forms.PictureBox Ball;
     }
 }
