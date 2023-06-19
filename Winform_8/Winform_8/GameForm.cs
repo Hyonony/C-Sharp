@@ -22,6 +22,7 @@ namespace Winform_8
         private void GameForm_Load(object sender, EventArgs e)
         {
             this.KeyDown += GameForm_KeyDown;
+            CentreBall();
             StartTargetMovement();
             StartButton.Click += StartButton_Click;
         }
@@ -44,7 +45,7 @@ namespace Winform_8
             }
         }
 
-        private async void StartButton_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
         {
             isMoving = !isMoving;
             if (isMoving)
@@ -61,8 +62,6 @@ namespace Winform_8
         {
             if (e.KeyCode == Keys.Space && isMoving)
             {
-                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);
-
                 while (Ball.Top > 0)
                 {
                     await Task.Delay(50);
@@ -76,9 +75,14 @@ namespace Winform_8
                         break;
                     }
                 }
-
-                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);
+                CentreBall(); // Reset ball to the centre
             }
+        }
+        private void CentreBall()
+        {
+            int x = (GamePanel.Width - Ball.Width) / 2;
+            int y = GamePanel.Height - Ball.Height;
+            Ball.Location = new Point(x, y);
         }
     }
 }
