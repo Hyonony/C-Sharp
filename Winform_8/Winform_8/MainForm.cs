@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
+using Winform_8;
 
 namespace ThreadWinFormExample
 {
@@ -59,6 +60,22 @@ namespace ThreadWinFormExample
             stopThread = true; // 폼이 닫힐 때 스레드 중지 변수 설정
             if (calculationThread != null && calculationThread.IsAlive)
                 calculationThread.Join(); // 스레드 종료 대기
+        }
+
+        private void MoveToGameButton_Click(object sender, EventArgs e)
+        {
+            GameForm gameform = new GameForm(this);
+            gameform.FormClosed += GameForm_FormClosed;
+
+            gameform.Show();
+
+            // 현재 윈폼 숨기기
+            this.Hide();
+        }
+
+        private void GameForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }

@@ -31,6 +31,7 @@
             this.ResultListBox = new System.Windows.Forms.ListBox();
             this.StartThreadButton = new System.Windows.Forms.Button();
             this.StopThreadButton = new System.Windows.Forms.Button();
+            this.MoveToGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ResultListBox
@@ -63,11 +64,22 @@
             this.StopThreadButton.UseVisualStyleBackColor = true;
             this.StopThreadButton.Click += new System.EventHandler(this.StopThreadButton_Click);
             // 
+            // MoveToGameButton
+            // 
+            this.MoveToGameButton.Location = new System.Drawing.Point(600, 425);
+            this.MoveToGameButton.Name = "MoveToGameButton";
+            this.MoveToGameButton.Size = new System.Drawing.Size(90, 39);
+            this.MoveToGameButton.TabIndex = 3;
+            this.MoveToGameButton.Text = "Game";
+            this.MoveToGameButton.UseVisualStyleBackColor = true;
+            this.MoveToGameButton.Click += new System.EventHandler(this.MoveToGameButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.MoveToGameButton);
             this.Controls.Add(this.StopThreadButton);
             this.Controls.Add(this.StartThreadButton);
             this.Controls.Add(this.ResultListBox);
@@ -82,6 +94,7 @@
         private System.Windows.Forms.ListBox ResultListBox;
         private System.Windows.Forms.Button StartThreadButton;
         private System.Windows.Forms.Button StopThreadButton;
+        private System.Windows.Forms.Button MoveToGameButton;
     }
 }
 
