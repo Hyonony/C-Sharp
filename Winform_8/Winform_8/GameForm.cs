@@ -22,11 +22,26 @@ namespace Winform_8
         private void GameForm_Load(object sender, EventArgs e)
         {
             this.KeyDown += GameForm_KeyDown;
+            StartTargetMovement();
+            StartButton.Click += StartButton_Click;
         }
 
         private void ScoreLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void StartTargetMovement()
+        {
+            while (true)
+            {
+                Target.Left += direction * 5;
+                if (Target.Right > GamePanel.Width || Target.Left < 0)
+                {
+                    direction *= -1;
+                }
+                await Task.Delay(50);
+            }
         }
 
         private async void StartButton_Click(object sender, EventArgs e)
@@ -35,16 +50,6 @@ namespace Winform_8
             if (isMoving)
             {
                 StartButton.Text = "정지";
-                while (isMoving)
-                {
-                    Target.Left += direction * 5;
-                    if (Target.Right > GamePanel.Width || Target.Left < 0)
-                    {
-                        direction *= -1;
-                    }
-
-                    await Task.Delay(50);
-                }
             }
             else
             {
@@ -56,8 +61,7 @@ namespace Winform_8
         {
             if (e.KeyCode == Keys.Space && isMoving)
             {
-                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);el;
-    }
+                Ball.Location = new Point(0, GamePanel.Height - Ball.Size.Height);
 
                 while (Ball.Top > 0)
                 {

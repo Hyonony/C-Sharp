@@ -35,7 +35,6 @@
             this.GamePanel = new System.Windows.Forms.Panel();
             this.Ball = new System.Windows.Forms.PictureBox();
             this.Target = new System.Windows.Forms.PictureBox();
-            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             this.GamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Target)).BeginInit();
