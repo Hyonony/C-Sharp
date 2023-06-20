@@ -46,7 +46,7 @@ namespace Winform_8
 
                     // 목표물의 새로운 랜덤 위치를 설정
                     int randomX = rand.Next(0, GamePanel.Width - Target.Width);
-                    Target.Location = new Point(randomX, Target.Location.Y);
+                    Target.Location = new Point(randomX, 0); // 타겟의 y좌표를 0으로 설정
                 }
 
                 await Task.Delay(20); // 목표물 이동 딜레이
