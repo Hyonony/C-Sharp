@@ -34,6 +34,7 @@
             this.Target = new System.Windows.Forms.PictureBox();
             this.Ball = new System.Windows.Forms.PictureBox();
             this.RemainingPlaysLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.GamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Target)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
@@ -42,11 +43,12 @@
             // ScoreLabel
             // 
             this.ScoreLabel.AutoSize = true;
-            this.ScoreLabel.Location = new System.Drawing.Point(615, 93);
+            this.ScoreLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ScoreLabel.Location = new System.Drawing.Point(634, 94);
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(68, 18);
+            this.ScoreLabel.Size = new System.Drawing.Size(85, 20);
             this.ScoreLabel.TabIndex = 1;
-            this.ScoreLabel.Text = "          ";
+            this.ScoreLabel.Text = "score : 0";
             // 
             // GamePanel
             // 
@@ -78,17 +80,29 @@
             // RemainingPlaysLabel
             // 
             this.RemainingPlaysLabel.AutoSize = true;
-            this.RemainingPlaysLabel.Location = new System.Drawing.Point(304, 93);
+            this.RemainingPlaysLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.RemainingPlaysLabel.Location = new System.Drawing.Point(462, 95);
             this.RemainingPlaysLabel.Name = "RemainingPlaysLabel";
-            this.RemainingPlaysLabel.Size = new System.Drawing.Size(68, 18);
+            this.RemainingPlaysLabel.Size = new System.Drawing.Size(132, 20);
             this.RemainingPlaysLabel.TabIndex = 3;
-            this.RemainingPlaysLabel.Text = "          ";
+            this.RemainingPlaysLabel.Text = "남은 횟수 : 10 ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(74, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(340, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "스페이스바를 이용하여 타켓을 맞추세요!";
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 800);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.RemainingPlaysLabel);
             this.Controls.Add(this.GamePanel);
             this.Controls.Add(this.ScoreLabel);
@@ -109,5 +123,6 @@
         private System.Windows.Forms.PictureBox Target;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.Label RemainingPlaysLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
