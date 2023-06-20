@@ -68,5 +68,6 @@
 ### Winform_8
 * Thread Start, Stop 버튼
 * Game Form
-  * Ball, Target 생성 후 Space Bar 누르면 전환 (Ball만 Spacebar에 움직임)
-  * 만약 서로 맞닿을 경우 점수 획득
+  * Ball, Target 생성
+  * Target은 상단에서 시작하고 Space Bar를 이용하면 Ball 움직이고 Target을 맞추면 점수 획득
+  * 
