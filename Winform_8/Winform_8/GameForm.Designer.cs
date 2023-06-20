@@ -57,7 +57,6 @@
             this.ScoreLabel.Size = new System.Drawing.Size(68, 18);
             this.ScoreLabel.TabIndex = 1;
             this.ScoreLabel.Text = "          ";
-            this.ScoreLabel.Click += new System.EventHandler(this.ScoreLabel_Click);
             // 
             // GamePanel
             // 
