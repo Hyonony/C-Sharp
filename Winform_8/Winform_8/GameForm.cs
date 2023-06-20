@@ -9,7 +9,6 @@ namespace Winform_8
     {
         private int score = 0;
         private int direction = 1;
-        private bool isMoving = false;
         private bool isGamePaused = true;
         private Random rand = new Random();
 
