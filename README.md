@@ -71,4 +71,4 @@
   * Ball, Target 생성
   * Target은 상단에서 시작하고 Space Bar를 이용하면 Ball 움직이고 Target을 맞추면 점수 획득
   * 총 10번의 기회 > 남은 플레이 횟수 Label, 전체 스코어 Label
-  * 
+  * Stage(level) 생성
