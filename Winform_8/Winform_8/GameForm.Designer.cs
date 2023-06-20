@@ -35,6 +35,7 @@
             this.Ball = new System.Windows.Forms.PictureBox();
             this.RemainingPlaysLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.StageLabel = new System.Windows.Forms.Label();
             this.GamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Target)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
@@ -97,11 +98,21 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "스페이스바를 이용하여 타켓을 맞추세요!";
             // 
+            // StageLabel
+            // 
+            this.StageLabel.AutoSize = true;
+            this.StageLabel.Location = new System.Drawing.Point(74, 45);
+            this.StageLabel.Name = "StageLabel";
+            this.StageLabel.Size = new System.Drawing.Size(82, 18);
+            this.StageLabel.TabIndex = 5;
+            this.StageLabel.Text = "Stage : 1";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 800);
+            this.Controls.Add(this.StageLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RemainingPlaysLabel);
             this.Controls.Add(this.GamePanel);
@@ -124,5 +135,6 @@
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.Label RemainingPlaysLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label StageLabel;
     }
 }

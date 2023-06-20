@@ -12,6 +12,13 @@ namespace Winform_8
         private int direction = 1;
         private bool isMoving = false;
         private Random rand = new Random();
+        private int stage = 1;
+
+        private void UpdateStage()
+        {
+            stage++;
+            StageLabel.Text = $"Stage: {stage}";
+        }
 
         public GameForm()
         {
@@ -26,7 +33,7 @@ namespace Winform_8
             this.KeyDown += GameForm_KeyDown;
             CentreBall();
             SetInitialTargetPosition();
-            StartTargetMovement();
+            StartTargetMovement(5);
             UpdateRemainingPlays();
         }
         private void UpdateRemainingPlays()
@@ -40,24 +47,24 @@ namespace Winform_8
             Target.Location = new Point(randomX, 0);
         }
 
-        private async void StartTargetMovement()
+        private async void StartTargetMovement(int speed)
         {
-            int speed = 10;
             while (true)
             {
                 Target.Left += direction * speed;
-                if (Target.Right > GamePanel.Width || Target.Left < 0)
-                {
-                    direction *= -1;
 
-                    int randomX = rand.Next(0, GamePanel.Width - Target.Width);
-                    Target.Location = new Point(randomX, 0);
+                if (Target.Right > GamePanel.Width)
+                {
+                    Target.Left = 0;
+                }
+                else if (Target.Left < 0)
+                {
+                    Target.Left = GamePanel.Width - Target.Width;
                 }
 
                 await Task.Delay(20);
             }
         }
-
 
         private async void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -74,11 +81,24 @@ namespace Winform_8
 
                 if (numPlays == 0)
                 {
-                    MessageBox.Show($"게임이 종료되었습니다. 최종 점수: {score}", "게임 종료", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    numPlays = 10;
-                    score = 0;
-                    ScoreLabel.Text = $"Score: {score}";
-                    UpdateRemainingPlays();
+                    if (score >= 1)
+                    {
+                        UpdateStage();
+
+                        MessageBox.Show($"2단계로 이동합니다. 현재 점수: {score}", "2단계", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        numPlays = 10;
+
+                        // 속도를 증가시키고 2단계로 진행합니다.
+                        StartTargetMovement(10);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"게임이 종료되었습니다. 최종 점수: {score}", "게임 종료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        numPlays = 10;
+                        score = 0;
+                        ScoreLabel.Text = $"Score: {score}";
+                        UpdateRemainingPlays();
+                    }
                 }
                 else
                 {
