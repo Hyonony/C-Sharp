@@ -61,15 +61,15 @@ namespace Winform_8
 
         private async void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space && numPlays > 0)
+            if (e.KeyCode == Keys.Space)
             {
-                numPlays--;
-                UpdateRemainingPlays(); // 추가된 부분: 남은 게임 횟수를 업데이트합니다.
-
                 if (isMoving)
                 {
                     return;
                 }
+
+                numPlays--;
+                UpdateRemainingPlays();
                 isMoving = true;
 
                 if (numPlays == 0)
@@ -78,7 +78,7 @@ namespace Winform_8
                     numPlays = 10;
                     score = 0;
                     ScoreLabel.Text = $"Score: {score}";
-                    UpdateRemainingPlays(); // 추가된 부분: 남은 게임 횟수를 업데이트합니다.
+                    UpdateRemainingPlays();
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace Winform_8
         }
         private void CentreBall()
         {
-            int x = rand.Next(0, GamePanel.Width - Ball.Width);
+            int x = (GamePanel.Width - Ball.Width) / 2;
             int y = GamePanel.Height - Ball.Height;
             Ball.Location = new Point(x, y);
         }
