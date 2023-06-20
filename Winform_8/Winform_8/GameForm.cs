@@ -10,7 +10,7 @@ namespace Winform_8
         private int score = 0;
         private int numPlays = 10;
         private int direction = 1;
-        private bool isGamePaused = true;
+        private bool isMoving = false;
         private Random rand = new Random();
 
         public GameForm()
@@ -27,7 +27,11 @@ namespace Winform_8
             CentreBall();
             SetInitialTargetPosition();
             StartTargetMovement();
-            StartButton.Click += StartButton_Click;
+            UpdateRemainingPlays();
+        }
+        private void UpdateRemainingPlays()
+        {
+            RemainingPlaysLabel.Text = $"남은 횟수: {numPlays}";
         }
 
         private void SetInitialTargetPosition()
@@ -54,37 +58,33 @@ namespace Winform_8
             }
         }
 
-        private void StartButton_Click(object sender, EventArgs e)
-        {
-            isGamePaused = !isGamePaused;
-            if (isGamePaused)
-            {
-                StartButton.Text = "시작";
-            }
-            else
-            {
-                StartButton.Text = "정지";
-            }
-        }
 
         private async void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space && !isGamePaused && numPlays > 0)
+            if (e.KeyCode == Keys.Space && numPlays > 0)
             {
                 numPlays--;
+                UpdateRemainingPlays(); // 추가된 부분: 남은 게임 횟수를 업데이트합니다.
+
+                if (isMoving)
+                {
+                    return;
+                }
+                isMoving = true;
 
                 if (numPlays == 0)
                 {
                     MessageBox.Show($"게임이 종료되었습니다. 최종 점수: {score}", "게임 종료", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    numPlays = 10; // 다시 게임을 할 수 있게 횟수를 리셋
-                    score = 0; // 점수 다시 0으로 초기화
+                    numPlays = 10;
+                    score = 0;
                     ScoreLabel.Text = $"Score: {score}";
+                    UpdateRemainingPlays(); // 추가된 부분: 남은 게임 횟수를 업데이트합니다.
                 }
                 else
                 {
                     while (Ball.Top > 0)
                     {
-                        await Task.Delay(20); // 수정된 부분: 지연 시간을 줄였습니다.
+                        await Task.Delay(20);
                         Ball.Top -= 10;
 
                         if (Ball.Bounds.IntersectsWith(Target.Bounds))
@@ -96,6 +96,8 @@ namespace Winform_8
                     }
                     CentreBall();
                 }
+
+                isMoving = false;
             }
         }
         private void CentreBall()

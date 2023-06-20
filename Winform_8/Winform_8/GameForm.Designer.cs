@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.StartButton = new System.Windows.Forms.Button();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.GamePanel = new System.Windows.Forms.Panel();
-            this.Ball = new System.Windows.Forms.PictureBox();
             this.Target = new System.Windows.Forms.PictureBox();
+            this.Ball = new System.Windows.Forms.PictureBox();
+            this.RemainingPlaysLabel = new System.Windows.Forms.Label();
             this.GamePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Target)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             this.SuspendLayout();
             // 
             // StartButton
@@ -67,15 +67,6 @@
             this.GamePanel.Size = new System.Drawing.Size(648, 581);
             this.GamePanel.TabIndex = 2;
             // 
-            // Ball
-            // 
-            this.Ball.Image = ((System.Drawing.Image)(resources.GetObject("Ball.Image")));
-            this.Ball.Location = new System.Drawing.Point(63, 343);
-            this.Ball.Name = "Ball";
-            this.Ball.Size = new System.Drawing.Size(96, 73);
-            this.Ball.TabIndex = 0;
-            this.Ball.TabStop = false;
-            // 
             // Target
             // 
             this.Target.Image = ((System.Drawing.Image)(resources.GetObject("Target.Image")));
@@ -85,19 +76,38 @@
             this.Target.TabIndex = 1;
             this.Target.TabStop = false;
             // 
+            // Ball
+            // 
+            this.Ball.Image = ((System.Drawing.Image)(resources.GetObject("Ball.Image")));
+            this.Ball.Location = new System.Drawing.Point(63, 343);
+            this.Ball.Name = "Ball";
+            this.Ball.Size = new System.Drawing.Size(96, 73);
+            this.Ball.TabIndex = 0;
+            this.Ball.TabStop = false;
+            // 
+            // RemainingPlaysLabel
+            // 
+            this.RemainingPlaysLabel.AutoSize = true;
+            this.RemainingPlaysLabel.Location = new System.Drawing.Point(304, 93);
+            this.RemainingPlaysLabel.Name = "RemainingPlaysLabel";
+            this.RemainingPlaysLabel.Size = new System.Drawing.Size(68, 18);
+            this.RemainingPlaysLabel.TabIndex = 3;
+            this.RemainingPlaysLabel.Text = "          ";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 800);
+            this.Controls.Add(this.RemainingPlaysLabel);
             this.Controls.Add(this.GamePanel);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.StartButton);
             this.Name = "GameForm";
             this.Text = "게임 화면";
             this.GamePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Target)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +120,6 @@
         private System.Windows.Forms.PictureBox Target;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label ScoreLabel;
+        private System.Windows.Forms.Label RemainingPlaysLabel;
     }
 }
