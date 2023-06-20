@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
-            this.StartButton = new System.Windows.Forms.Button();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.GamePanel = new System.Windows.Forms.Panel();
             this.Target = new System.Windows.Forms.PictureBox();
@@ -39,15 +38,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Target)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             this.SuspendLayout();
-            // 
-            // StartButton
-            // 
-            this.StartButton.Location = new System.Drawing.Point(77, 86);
-            this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(96, 33);
-            this.StartButton.TabIndex = 0;
-            this.StartButton.Text = "Start";
-            this.StartButton.UseVisualStyleBackColor = true;
             // 
             // ScoreLabel
             // 
@@ -102,7 +92,6 @@
             this.Controls.Add(this.RemainingPlaysLabel);
             this.Controls.Add(this.GamePanel);
             this.Controls.Add(this.ScoreLabel);
-            this.Controls.Add(this.StartButton);
             this.Name = "GameForm";
             this.Text = "게임 화면";
             this.GamePanel.ResumeLayout(false);
@@ -118,7 +107,6 @@
         private System.Windows.Forms.Panel GamePanel;
         private System.Windows.Forms.PictureBox Ball;
         private System.Windows.Forms.PictureBox Target;
-        private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.Label RemainingPlaysLabel;
     }
