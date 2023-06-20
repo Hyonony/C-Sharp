@@ -10,6 +10,8 @@ namespace Winform_8
         private int score = 0;
         private int direction = 1;
         private bool isMoving = false;
+        private bool isGamePaused = true;
+        private Random rand = new Random();
 
         public GameForm()
         {
@@ -34,33 +36,39 @@ namespace Winform_8
 
         private async void StartTargetMovement()
         {
+            int speed = 10; // 목표물 이동 속도
             while (true)
             {
-                Target.Left += direction * 5;
+                Target.Left += direction * speed;
                 if (Target.Right > GamePanel.Width || Target.Left < 0)
                 {
                     direction *= -1;
+
+                    // 목표물의 새로운 랜덤 위치를 설정
+                    int randomX = rand.Next(0, GamePanel.Width - Target.Width);
+                    Target.Location = new Point(randomX, Target.Location.Y);
                 }
-                await Task.Delay(50);
+
+                await Task.Delay(20); // 목표물 이동 딜레이
             }
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            isMoving = !isMoving;
-            if (isMoving)
+            isGamePaused = !isGamePaused;
+            if (isGamePaused)
             {
-                StartButton.Text = "정지";
+                StartButton.Text = "시작";
             }
             else
             {
-                StartButton.Text = "시작";
+                StartButton.Text = "정지";
             }
         }
 
         private async void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space && isMoving)
+            if (e.KeyCode == Keys.Space && !isGamePaused)
             {
                 while (Ball.Top > 0)
                 {
@@ -80,7 +88,7 @@ namespace Winform_8
         }
         private void CentreBall()
         {
-            int x = (GamePanel.Width - Ball.Width) / 2;
+            int x = rand.Next(0, GamePanel.Width - Ball.Width); // 공의 초기 위치를 랜덤으로 설정
             int y = GamePanel.Height - Ball.Height;
             Ball.Location = new Point(x, y);
         }
