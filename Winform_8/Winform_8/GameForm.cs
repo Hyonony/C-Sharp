@@ -81,7 +81,7 @@ namespace Winform_8
 
                 if (numPlays == 0)
                 {
-                    if (score >= 1)
+                    if (score >= 7)
                     {
                         UpdateStage();
 
