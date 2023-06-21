@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Windows.Forms;
 using SharpPcap;
 using SharpPcap.LibPcap;
@@ -36,7 +35,7 @@ namespace Winform_9
             }
 
             device = devices[deviceListComboBox.SelectedIndex] as LibPcapLiveDevice;
-            device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
+            device.OnPacketArrival += device_OnPacketArrival;
             device.Open(DeviceMode.Promiscuous, 1000);
             device.StartCapture();
         }
@@ -44,10 +43,10 @@ namespace Winform_9
         private void device_OnPacketArrival(object sender, CaptureEventArgs e)
         {
             var packet = Packet.ParsePacket(e.Packet.LinkLayerType, e.Packet.Data);
-            var ipPacket = (IpPacket)packet.Extract(typeof(IpPacket));
+            var ipPacket = packet.Extract(typeof(IpPacket)) as IpPacket;
             if (ipPacket == null) return;
 
-            Invoke(new MethodInvoker(delegate
+            BeginInvoke(new MethodInvoker(delegate
             {
                 packetInfoListBox.Items.Add($"TTL: {ipPacket.TimeToLive}, Version: {ipPacket.Version}");
             }));
