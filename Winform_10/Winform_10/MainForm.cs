@@ -15,7 +15,23 @@ namespace Winform_10
         public MainForm()
         {
             InitializeComponent();
+
+            // ItemsDataGridView에 열(Column) 추가
+            ItemsDataGridView.Columns.Add("Column1", "Header1");
+            ItemsDataGridView.Columns.Add("Column2", "Header2");
+            ItemsDataGridView.Columns.Add("Column3", "Header3");
+
+            // SuppliersDataGridView에 열(Column) 추가
+            SuppliersDataGridView.Columns.Add("Column1", "Header1");
+            SuppliersDataGridView.Columns.Add("Column2", "Header2");
+            SuppliersDataGridView.Columns.Add("Column3", "Header3");
+
+            // OrdersDataGridView에 열(Column) 추가
+            OrdersDataGridView.Columns.Add("Column1", "Header1");
+            OrdersDataGridView.Columns.Add("Column2", "Header2");
+            OrdersDataGridView.Columns.Add("Column3", "Header3");
         }
+
         private void AddItemButton_Click(object sender, EventArgs e)
         {
             ItemsDataGridView.Rows.Add("Item1", "Item2", "Item3");
